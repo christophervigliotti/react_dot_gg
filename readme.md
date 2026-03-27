@@ -1,9 +1,11 @@
 # react_dot_gg
 
-## Current Progress
+24% Complete!
 
-24%  
-https://fireship.dev/c/react/using-usestate  
+## Current Focus
+
+* https://fireship.dev/c/react/using-usestate  
+* folder using-usestate
 
 ![Snorlax is in the zone](snorlax.webp)
 
