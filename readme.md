@@ -4,12 +4,11 @@
 
 ## Current Focus
 
-* https://fireship.dev/c/react/using-usestate  
-* folder using-usestate
-
-![Snorlax is in the zone](snorlax.webp)
+* exercise https://fireship.dev/c/react/using-usestate  
+* folder https://github.com/christophervigliotti/react_dot_gg/tree/main/using-usestate
 
 ## Notes
+section-specific notes at https://github.com/christophervigliotti/react_dot_gg/tree/main/notes
 ```
 create an app
     npm create vite@latest my-react-app --template react
@@ -24,3 +23,5 @@ folders
         todo list app from the course 
             npm create vite@latest using-usestate --template react
 ```
+
+![Snorlax is in the zone](snorlax.webp)
