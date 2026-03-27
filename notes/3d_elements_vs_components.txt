@@ -1,0 +1,47 @@
+Elements vs Components 
+    Notes from video 
+        A react element is an object representation of a DOM node 
+            example 
+                {
+                    type: "h1",
+                    props: {
+                        children: "Profile",
+                        className: "header"
+                    }
+                }
+                ...this is an object representation of a DOM note that looks like this...
+                    <h1 class="header">
+                        Profile
+                    </h1>                
+
+        create a react element
+
+            you have a few options – one of them being React's jsx-runtime package.
+                import { jsx } from "react/jsx-runtime"
+                const element = jsx("h1", {
+                    className: "header",
+                    children: "Profile"
+                })
+                ...jsx takes in two arguments. The first is a tag name string (div, span, etc.) and the second is an object of attributes you want the element to have. In our case, a className of header with the text Profile as its contents.
+            
+                ^ note...no jsx (just pure JavaScript)
+                
+                ...follow-up example, you can pass in other react components as the first argument to jsx as well...
+                    const element = jsx(Badge, {
+                        name: "Tyler McGinnis",
+                        handle: "tylermcginnis",
+                        img: "https://avatars0.githubusercontent.com/u/2933430"
+                    })
+
+
+        elements are the true building blocks of react 
+
+        components return react elements 
+
+        what is the difference between 
+        <JSX /> writing jsx 
+        & jsx() using jsx transform 
+            as far as the browser is concerned: nothing
+
+         <JSX /> is obv more concise 
+         

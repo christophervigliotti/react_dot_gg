@@ -1,0 +1,104 @@
+export default function AlertButton() {
+  const handleClick = () => alert("OUCH")
+
+  return (
+    <button onClick={handleClick}>
+      Alert
+    </button>
+  )
+}
+
+it's a good idea to encapsulate the event handler into its own function, and it's common practice to name the function handle + the event name – in our case handleClick.
+
+const handleClick = () => {}
+
+const handleFocus = () => {}
+
+const handleChange = () => {}
+
+Next, you'll notice that we're passing our event handler as a reference to onClick, not as an invocation. Note the difference between these two onClick props.
+
+do this
+    <button onClick={handleClick}>
+    Passing a Reference
+    </button>
+
+not this 
+    <button onClick={handleClick()}>
+    Passing an Invocation
+    </button>
+
+you'll notice that we created our event handler inside the component, not outside of it. This is also a common pattern, but it may feel unintuitive at first. 
+
+By declaring our handleClick function inside of our component, we automatically have access to the message prop via JavaScript's normal lexical scoping rules.
+
+Challenges Notes
+
+
+ch1
+    export default function App() {
+        const handleChange = () => {
+            // if count is greater than 10, show an alert
+        }
+    return (
+        <section>
+        <h1>Character Limit</h1>
+        <input onChange={handleChange} placeholder="Enter some text" />
+        </section>
+    );
+    }
+
+    export default function App() {
+        const handleChange = (e) => {
+            if (e.target.value.length > 10) {
+                alert("Character limit exceeded!");
+            }
+        }
+        
+    return (
+        <section>
+        <h1>Character Limit</h1>
+        <input onChange={handleChange} placeholder="Enter some text" />
+        </section>
+    );
+    }
+ch2
+    this works but the course interpreter/parser is rejecting it
+        const handleChange = (event) => {
+        if (event.target.value.length > 10) {
+            alert("Character limit exceeded");
+        }
+        };
+
+        function Input({ characterLimit }) {
+        return <input onChange={handleChange} placeholder="Enter some text" />;
+        }
+
+        export default function App() {
+        return (
+            <section>
+            <h1>Character Limit</h1>
+            <Input characterLimit={20} />
+            </section>
+        );
+        }
+    here is their suggested solution
+
+        function Input({ characterLimit }) {
+        const handleChange = (event) => {
+            if (event.target.value.length > characterLimit) {
+            alert("Character limit exceeded");
+            }
+        };
+
+        return <input onChange={handleChange} placeholder="Enter some text" />;
+        }
+
+        export default function App() {
+        return (
+            <section>
+            <h1>Character Limit</h1>
+            <Input characterLimit={20} />
+            </section>
+        );
+        }

@@ -1,0 +1,118 @@
+React is a library for building user interaces.  Represented in 
+
+v=f(s)
+or
+view = function(state)
+
+components manage their own state
+
+it's a scope thing, like js
+in js this won't work
+
+    function counter() {
+    let count = 0
+    count++
+    return count
+    }
+
+    console.log(counter())
+    console.log(counter()) 
+    console.log(counter()) 
+
+what is a hook 
+
+    useState is the first of many hooks that you'll learn in this course. You can think of hooks as special functions that allow you to get help from React.
+
+    The reason they're special is because they have a few limitations. Namely that they must be prepended with use and you can’t call hooks inside conditions, loops, or other nested functions.
+
+    We'll go deeper into hooks throughout the course, but here's a simple mental model you can use for them.
+
+    "Hooks are functions, but it’s helpful to think of them as unconditional declarations about your component’s needs. You use React features at the top of your component similar to how you import modules at the top of your file." - React docs
+
+useState
+    useState is the blessed way to preserve a value across component renders. It comes built-in with React and can be accessed via React.useState. It takes in a single argument, the initial value for that piece of state, and returns an array with the first item being the state value and the second item being a way to update that state.
+
+    const stateArray = React.useState("initial state value")
+    const state = stateArray[0]
+    const setState = stateArray[1]
+
+    console.log(state) // "initial state value"
+    setState('new state value')
+
+    the useState hook allows u to 
+
+        1. trigger a re-render of the component 
+        2. add state to a component 
+        3. preserve a value between renders 
+
+Array Destructuring
+    You may notice that the code above feels a little clunky. This stems from the fact that useState returns an array. We can clean this up by using array destructuring.
+
+    If you're not familiar, array destructuring allows you to pluck multiple items from an array and assign them to variables in bulk.
+
+        const scores = [86, 91, 82]
+        const [firstGame, secondGame, thirdGame] = scores
+    Because useState returns an array, we can use array destructuring to clean up our useState invocation by assigning the first item to state and the second item to setState.
+
+        const [state, setState] = React.useState(
+            "initial state value"
+        )
+
+ Now that we know the purpose of useState as well as how it works, let's update our Counter example from earlier to use it.
+
+    import * as React from "react"
+    export default function Counter() {
+        const [count, setCount] = React.useState(0)
+        const handleClick = () => setCount(count + 1)
+        return (
+            <button onClick={handleClick}>
+            {count}
+            </button>
+        )
+    }
+    
+Now, regardless of how many times React renders our Counter component, the value of count will persist across all of those renders. But this brings up an interesting question, when does React render our components exactly?
+
+We have a whole lesson dedicated to that question later in the course, but here's a sneak preview. The answer is surprisingly simple. React re-renders a component whenever its state changes.
+
+
+this is incorrect...
+
+    import * as React from "react";
+
+    export default function ThemeSwitcher() {
+    const [setTheme, theme] = React.useState("light") 
+
+    ^ because the state destructuring is backwards (should be [theme,setTheme])
+
+    const handleClick = () => {
+        setTheme(theme === "dark" ? "light" : "dark");
+    };
+
+    return (
+        <button onClick={handleClick} className={theme}>
+        Switch Theme
+        </button>
+    );
+    }
+
+// an example of multiple html elements interacting with a {thingie}
+
+    import * as React from "react";
+
+    export default function App() {
+        const [count, setCount] = React.useState(0);
+
+        const increment = () => setCount((prevCount) => prevCount + 1);
+        const decrement = () => setCount((prevCount) => prevCount - 1);
+
+        return (
+            <main>
+            <span>{count}</span>
+            <div>
+                <button onClick={decrement}>-</button>
+                <button onClick={increment}>+</button>
+            </div>
+            </main>
+        );
+    }
