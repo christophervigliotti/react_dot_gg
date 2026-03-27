@@ -24,4 +24,10 @@ folders
             npm create vite@latest using-usestate --template react
 ```
 
+## Reference
+
+### JavaScript
+
+* Spread Operator https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax 
+
 ![Snorlax is in the zone](snorlax.webp)

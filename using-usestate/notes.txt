@@ -1,0 +1,79 @@
+# Notes
+
+## Updating Object State
+
+```
+It's important to note that when you pass a value to useState's updater function, whatever value you pass will always replace the current piece of state.
+
+What this means is that if you have a piece of state that is an object, it won't be merged with the current state.
+
+    const [user, setUser] = React.useState({
+        id: 1,
+        name: "Tyler McGinnis",
+        email: "tyler@ux.dev"
+    })
+
+    const handleUpdateEmailIncorrectly = (email) => {
+        /*
+            This will overwrite our user state
+            with { email }.
+        */
+        setUser({ email })
+    }
+
+Instead of replacing the object, you most likely want to merge the new value with the existing state object. To do that, we can use JavaScript's spread operator to spread all of the existing key/value pairs onto a new object, then pass that new object to the updater function.
+
+    const handleUpdateEmail = (email) => {
+        const updatedUser = {
+            ...user,
+            email: "tyler@ui.dev"
+        }
+
+        setUser(updatedUser) // 🫡
+    }
+```
+
+## Updating Array State
+
+```
+Similar to objects, whenever you want to update an array that's on state, you need to pass the updater function a new array which will replace the current array.
+
+Admittedly, the knowledge you need for updating array state in React doesn't have anything to actually do with React, it's all just JavaScript.
+
+This is a good thing because it means this knowledge is portable to other JavaScript projects, not just React specific ones.
+
+You can break the process of updating arrays down into three use cases: adding elements, removing elements, and updating elements.
+
+Here's the canonical way to do each.
+
+To add an element to an array, use JavaScript's spread operator (...) to spread all the existing elements onto a new array with the new element.
+
+    const handleNewHighScore = (session) => {
+        const newHighScores = [...highScores, session]
+        setHighScores(newHighScores)
+    }
+
+To remove an element from an array, use JavaScript's filter method to create a new array, filtering out the element that should be removed.
+
+    const handleRemoveCheater = (id) => {
+        const newHighScores = highScores.filter((session) =>
+            session.id !== id
+        )
+        setHighScores(newHighScores)
+    }
+    
+To update an element, use JavaScript's map method to create a new array, updating the specific element where appropriate.
+
+    const handleUpdateHighScore = (updatedSession) => {
+        const newHighScores = highScores.map((session) => {
+            return session.id === updatedSession.id
+            ? updatedSession
+            : session
+        })
+        setHighScores(newHighScores)
+    }
+
+The take away from all of these examples is we're never modifying the original state array, and we're using built-in JavaScript array methods to make our transformations.
+
+Regardless of what type of changes you're making, these things should always hold true.
+```
