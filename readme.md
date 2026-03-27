@@ -1,11 +1,11 @@
 # react_dot_gg
 
-![Snorlax is in the zone](snorlax.webp)
-
 ## Current Progress
 
 24%  
 https://fireship.dev/c/react/using-usestate  
+
+![Snorlax is in the zone](snorlax.webp)
 
 ## Notes
 ```
