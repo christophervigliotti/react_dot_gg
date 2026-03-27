@@ -1,4 +1,4 @@
-# react_dot_gg
+# Chris' React.gg Course Goodies
 
 24% Complete!
 
