@@ -1,11 +1,11 @@
 # Chris' React.gg Course Goodies
 
-24% Complete!
+25% Complete 
 
 ## Current Focus
 
-* exercise https://fireship.dev/c/react/using-usestate  
-* folder https://github.com/christophervigliotti/react_dot_gg/tree/main/using-usestate
+* exercise https://fireship.dev/c/react/smart-character-limit  
+* folder https://github.com/christophervigliotti/react_dot_gg/tree/main/a-vite-app
 
 ## Notes
 section-specific notes at https://github.com/christophervigliotti/react_dot_gg/tree/main/notes
