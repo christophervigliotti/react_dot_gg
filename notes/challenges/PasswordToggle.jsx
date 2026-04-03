@@ -5,7 +5,7 @@ function PasswordInput({ minimum = 8 }) {
   const isInputValueVisible = false;
   const thresholdMet = false;
 
-  const handleChange = () => {};
+  const [password,handleChange] = React.useState("");
 
   const handleToggleVisibility = () => {};
 
@@ -35,7 +35,7 @@ function PasswordInput({ minimum = 8 }) {
           value={inputValue}
           onChange={handleChange}
         />
-        <button type="button" onClick={handleToggleVisibility}>
+        <button type="button" onClick={handleToggleVisibility} onChange={handleChange}>
           {isInputValueVisible ? "🙊" : "🙈"}
         </button>
       </div>
