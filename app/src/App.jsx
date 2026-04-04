@@ -1,18 +1,52 @@
-import * as React from "react";
+import React from "react";
 
-export default function App() {
-  const [count, setCount] = React.useState(0);
+function PasswordInput({ minimum = 8 }) {
+  const inputValue = "";
+  const isInputValueVisible = false;
+  const thresholdMet = false;
 
-  const increment = () => setCount((prevCount) => prevCount + 1);
-  const decrement = () => setCount((prevCount) => prevCount - 1);
+  const handleChange = (e) => {
+    passwordLength = e.target.value.length;
+  };
+
+  const handleToggleVisibility = () => {};
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (thresholdMet) {
+      alert("Password submitted");
+    } else {
+      alert("You need a longer password");
+    }
+  };
 
   return (
-    <main>
-      <span>{count}</span>
+    <form onSubmit={handleSubmit}>
       <div>
-        <button onClick={decrement}>-</button>
-        <button onClick={increment}>+</button>
+        <label htmlFor="limited-text-input">Password:</label>
+        <span className={thresholdMet ? "no-error" : "error"}>
+          {inputValue.length}
+        </span>
       </div>
-    </main>
+      <div>
+        <input
+          placeholder="Enter a password"
+          type={isInputValueVisible ? "text" : "password"}
+          id="limited-text-input"
+          value={inputValue}
+          onChange={handleChange}
+        />
+        <button type="button" onClick={handleToggleVisibility} onChange={handleChange}>
+          {isInputValueVisible ? "🙊" : "🙈"}
+        </button>
+      </div>
+
+      <button type="submit" className="primary">
+        Submit
+      </button>
+    </form>
   );
 }
+
+export default PasswordInput;

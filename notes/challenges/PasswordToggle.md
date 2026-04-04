@@ -4,6 +4,7 @@ WIP Update the password length count when the input changes
     handleChange
 
     stopping and re-reviewing https://fireship.dev/c/react/usestate
+    
 
 NOT_STARTED Update the text style based on the password length threshold
 
