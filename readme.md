@@ -1,11 +1,12 @@
 # Chris' React.gg Course Goodies
 
-25% Complete 
+## Work Log
 
-## Current Focus
-
-* exercise https://fireship.dev/c/react/smart-character-limit  
-* folder https://github.com/christophervigliotti/react_dot_gg/tree/main/a-vite-app
+```
+MON APR 6 
+    25% Complete 
+        revisiting "preserving values with viewState" so that I can get the implementation details to stick (the concept I get at this point) https://github.com/christophervigliotti/react_dot_gg
+```
 
 ## Notes
 section-specific notes at https://github.com/christophervigliotti/react_dot_gg/tree/main/notes

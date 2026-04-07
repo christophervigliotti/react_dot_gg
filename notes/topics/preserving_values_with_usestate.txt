@@ -80,6 +80,6 @@ useState
 
         Because useState returns an array, we can use array destructuring to clean up our useState invocation by assigning the first item to state and the second item to setState.
 
-    resume here https://fireship.dev/c/react/usestate
+    resume here https://fireship.dev/c/react/usestate. 
 ---
 
