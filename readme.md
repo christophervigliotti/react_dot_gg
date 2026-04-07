@@ -5,7 +5,10 @@
 ```
 MON APR 6 
     25% Complete 
-        revisiting "preserving values with viewState" so that I can get the implementation details to stick (the concept I get at this point) https://github.com/christophervigliotti/react_dot_gg
+        revisiting "preserving values with viewState" so that I can 
+        get the implementation details to stick 
+    notes
+        preserving_values_with_usestate.txt
 ```
 
 ## Notes
