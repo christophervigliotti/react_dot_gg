@@ -82,7 +82,7 @@ ch2
             </section>
         );
         }
-    here is their suggested solution
+    here is their suggested solution...I missed using characterLimit prop in my conditional statement 
 
         function Input({ characterLimit }) {
         const handleChange = (event) => {
