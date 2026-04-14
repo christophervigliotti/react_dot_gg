@@ -4,8 +4,11 @@
 
 ```
 MON APR 14
-    https://fireship.dev/c/react/usestate
-    
+    6p
+        continuing with challenges
+    430p
+        section: https://fireship.dev/c/react/usestate
+        notes: https://github.com/christophervigliotti/react_dot_gg/blob/main/notes/topics/preserving_values_with_usestate.txt
 MON APR 6 
     25% Complete 
         revisiting "preserving values with viewState" so that I can get the implementation details to stick 
