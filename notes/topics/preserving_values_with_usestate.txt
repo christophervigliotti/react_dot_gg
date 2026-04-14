@@ -6,7 +6,7 @@ In This Doc
     Lesson
 
 Challenges
-    
+    first one at https://fireship.dev/c/react/light-switch-challenge
 
 Quiz
     What are hooks in react?
