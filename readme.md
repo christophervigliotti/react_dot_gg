@@ -5,7 +5,8 @@
 ```
 MON APR 14
     6p
-        continuing with challenges
+        continuing with challenges 
+        https://github.com/christophervigliotti/react_dot_gg/tree/main/notes/challenges
     430p
         section: https://fireship.dev/c/react/usestate
         notes: https://github.com/christophervigliotti/react_dot_gg/blob/main/notes/topics/preserving_values_with_usestate.txt
