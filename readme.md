@@ -2,19 +2,27 @@
 
 ## Work Log
 
+### Current Month
+
 ```
-MON APR 14
+APRIL
+MON 14
     6p
         continuing with challenges 
         https://github.com/christophervigliotti/react_dot_gg/tree/main/notes/challenges
     430p
         section: https://fireship.dev/c/react/usestate
         notes: https://github.com/christophervigliotti/react_dot_gg/blob/main/notes/topics/preserving_values_with_usestate.txt
-MON APR 6 
+MON 6 
     25% Complete 
         revisiting "preserving values with viewState" so that I can get the implementation details to stick 
     notes
         preserving_values_with_usestate.txt
+```
+
+### Previous Months
+```
+will go here
 ```
 
 ## Notes
