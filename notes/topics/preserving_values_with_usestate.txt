@@ -1,85 +1,245 @@
-React is a library for building user interaces.  Represented in 
+https://fireship.dev/c/react/usestate
 
-v=f(s)
-or
-view = function(state)
+In This Doc
+    Challenges
+    Quiz
+    Lesson
 
-If we break it down, we've seen how you create your View with JSX, and how you encapsulate that View inside of a function to get your component. But there's still one piece of the formula we need to talk about, state.
+Challenges
+    
 
-State, and specifically the ability for individual components to own and manage their own state, is what makes React so powerful, and it's what allows you to build complex user interfaces out of simple, isolated components.
+Quiz
+    What are hooks in react?
+        x unconditional declarations about your component's needs
+        x special functions that allow you to get help from React
+    what limitations do Hooks have? 
+        x you cannot call them inside conditions / loops / nested functions
+        they can't access browser specific APIs like setInterval or window
+        x they must start with 'use'
+        they cannot acces props
+    what's wrong with this code?
+        x the ui won't update when visible changes
+        x visible won't persist between renders
+        code
+            export default function ToggleMessage() {
+                let visible = false;
+                const toggleVisibility = () => {
+                    visible = !visible;
+                };
+                return (
+                    <div>
+                    <button onClick={toggleVisibility}>Toggle Message</button>
+                        {visible && <p>The message is now visible!</p>}
+                    </div>
+                );
+            }
+        code (corrected) - the useState hook is how we persist the value between renders (and how we update the UI)
+            import * as React from "react";
+            export default function ToggleMessage() {
+                const [visible, setVisible] = React.useState(false);
+                const toggleVisibility = () => {
+                    setVisible(!visible)
+                };
+                return (
+                    <div>
+                    <button onClick={toggleVisibility}>Toggle Message</button>
+                        {visible && <p>The message is now visible!</p>}
+                    </div>
+                );
+            }      
+    what does the useState Hook allow you to do?
+        * add state to a component
+        * preserve a value between renders  
+        * trigger a re-render of the component
+            example of how to trigger a re-render...
+            const stateArray = React.useState("initial state value")
+            const state = stateArray[0]
+            const setState = stateArray[1]
+    what's wrong with this code
+        code
+            import * as React from "react";
+            export default function ThemeSwitcher() {
+                const [setTheme, theme] = React.useState("light")
+                const handleClick = () => {
+                    setTheme(theme === "dark" ? "light" : "dark");
+                };
+                return (
+                    <button onClick={handleClick} className={theme}>            
+                        Switch Theme from {theme}
+                    </button>
+                );
+            }
+        response
+            * our state destructuring is backwards
 
-So what does adding state to a component look like? Let's say we were building a simple counter app that keeps track of how many times a user has clicked a button.
+Lesson
+    React is a library for building user interaces.  Represented in 
 
-Your first assumption might be to do something like this.
+        v=f(s)
+        or
+        view = function(state)
 
-    export default function Counter() {
-        let count = 0
-        const handleClick = () => count++
-        return (
-            <button onClick={handleClick}>
-            {count}
-            </button>
-        )
-    }    
+    If we break it down, we've seen how you create your View with JSX, and how you encapsulate that View inside of a function to get your component. But there's still one piece of the formula we need to talk about, state.
 
-After all, React is just JavaScript, right? And the way you add state to a function is by creating a variable. Unfortunately, this won't work. Can you spot why?
+    State, and specifically the ability for individual components to own and manage their own state, is what makes React so powerful, and it's what allows you to build complex user interfaces out of simple, isolated components.
 
-Ironically, it won't work for the same reason, because React is just JavaScript – and that's not how JavaScript works.
+    So what does adding state to a component look like? Let's say we were building a simple counter app that keeps track of how many times a user has clicked a button.
 
-This is clearer if we take React out of the picture entirely. Here's a normal JavaScript function.
+    Your first assumption might be to do something like this.
 
-    function counter() {
-        let count = 0
-        count++
-        return count
-    }
+        export default function Counter() {
+            let count = 0
+            const handleClick = () => count++
+            return (
+                <button onClick={handleClick}>
+                {count}
+                </button>
+            )
+        }    
 
-    console.log(counter())
-    console.log(counter()) 
-    console.log(counter()) 
+    After all, React is just JavaScript, right? And the way you add state to a function is by creating a variable. Unfortunately, this won't work. Can you spot why?
 
-my response: because count is a local variable that will be reset every time you call the function 
+    Ironically, it won't work for the same reason, because React is just JavaScript – and that's not how JavaScript works.
 
-Without React, you wouldn't expect the count variable to persist across different function invocations. Each invocation is its own isolated environment with its own scope and context. With React, it's no different.
+    This is clearer if we take React out of the picture entirely. Here's a normal JavaScript function.
 
-So how do we get around this?
+        function counter() {
+            let count = 0
+            count++
+            return count
+        }
 
-Well, we need some help from React. Specifically, we need a way to tell React to preserve the value of count between different invocations of our Counter function (React refers to these function component invocations as renders).
+        console.log(counter())
+        console.log(counter()) 
+        console.log(counter()) 
 
-Lucky for us, React comes with a hook that does exactly this called useState.
+    my response: because count is a local variable that will be reset every time you call the function 
 
-    Hook 'Em
+    Without React, you wouldn't expect the count variable to persist across different function invocations. Each invocation is its own isolated environment with its own scope and context. With React, it's no different.
 
-        useState is the first of many hooks that you'll learn in this course. You can think of hooks as special functions that allow you to get help from React.
+    So how do we get around this?
 
-        The reason they're special is because they have a few limitations. Namely that they must be prepended with use and you can’t call hooks inside conditions, loops, or other nested functions.
+    Well, we need some help from React. Specifically, we need a way to tell React to preserve the value of count between different invocations of our Counter function (React refers to these function component invocations as renders).
 
-        We'll go deeper into hooks throughout the course, but here's a simple mental model you can use for them.
+    Lucky for us, React comes with a hook that does exactly this called useState.
 
-        "Hooks are functions, but it’s helpful to think of them as unconditional declarations about your component’s needs. You use React features at the top of your component similar to how you import modules at the top of your file." - React docs
+        Hook 'Em
 
-useState
+            useState is the first of many hooks that you'll learn in this course. You can think of hooks as special functions that allow you to get help from React.
 
-    useState is the blessed way to preserve a value across component renders. It comes built-in with React and can be accessed via React.useState. It takes in a single argument, the initial value for that piece of state, and returns an array with the first item being the state value and the second item being a way to update that state.
+            The reason they're special is because they have a few limitations. Namely that they must be prepended with use and you can’t call hooks inside conditions, loops, or other nested functions.
 
-    const stateArray = React.useState("initial state value")
-    const state = stateArray[0]
-    const setState = stateArray[1]
+            We'll go deeper into hooks throughout the course, but here's a simple mental model you can use for them.
 
-    console.log(state) // "initial state value"
-    setState('new state value')
+            "Hooks are functions, but it’s helpful to think of them as unconditional declarations about your component’s needs. You use React features at the top of your component similar to how you import modules at the top of your file." - React docs
 
-    Array Destructuring
+    useState
 
-        You may notice that the code above feels a little clunky. This stems from the fact that useState returns an array. We can clean this up by using array destructuring.
+        useState is the blessed way to preserve a value across component renders. It comes built-in with React and can be accessed via React.useState. It takes in a single argument, the initial value for that piece of state, and returns an array with the first item being the state value and the second item being a way to update that state.
 
-        If you're not familiar, array destructuring allows you to pluck multiple items from an array and assign them to variables in bulk.
+        const stateArray = React.useState("initial state value")
+        const state = stateArray[0]
+        const setState = stateArray[1]
 
-            const scores = [86, 91, 82]
-            const [firstGame, secondGame, thirdGame] = scores
+        console.log(state) // "initial state value"
+        setState('new state value')
 
-        Because useState returns an array, we can use array destructuring to clean up our useState invocation by assigning the first item to state and the second item to setState.
+        Array Destructuring
 
-    resume here https://fireship.dev/c/react/usestate. 
----
+            You may notice that the code above feels a little clunky. This stems from the fact that useState returns an array. We can clean this up by using array destructuring.
+
+            If you're not familiar, array destructuring allows you to pluck multiple items from an array and assign them to variables in bulk.
+
+                const scores = [86, 91, 82]
+                const [firstGame, secondGame, thirdGame] = scores
+
+            Because useState returns an array, we can use array destructuring to clean up our useState invocation by assigning the first item to state and the second item to setState.
+
+                const [state, setState] = React.useState(
+                    "initial state value"
+                )
+
+            Now that we know the purpose of useState as well as how it works, let's update our Counter example from earlier to use it.
+
+                import * as React from "react"
+                export default function Counter() {
+                    const [count, setCount] = React.useState(0)
+                    const handleClick = () => setCount(count + 1)
+                    return (
+                        <button onClick={handleClick}>
+                            {count}
+                        </button>
+                    )
+                }
+
+                ...and here is my wacky version
+                import * as React from "react"
+                export default function Counter() {
+                    const [count, setCount] = React.useState(0)
+                    const [title, setTitle] = React.useState(0)
+                    const handleClick = () => {
+                        setCount(count + 1)
+                    }
+                    // how do i get value into handleChange?
+                    // ...by passing the event in of course
+                    const handleChange = (event) => {
+                    setTitle(
+                        // event.target.value.split('').reverse().join('')
+                        event.target.value.split('').reverse()
+                        .map((char, index) => 
+                            index % 2 === 0 ? char.toUpperCase() : char.toLowerCase()
+                        )
+                        .join('')                    
+                    )
+                    // how do i dump the event to the console?
+                    // ...it's JavaScript!
+                    console.log(event);
+                    }
+                    return (
+                        <>
+                        <h1>{count}&nbsp;|&nbsp;{title}</h1>
+                        <input type="text" onChange={handleChange} />                      
+                        <button onClick={handleClick}>
+                            {count}
+                        </button>
+                        </>
+                    )
+                }
+
+                ...more wacky
+                import * as React from "react"
+                export default function Counter() {
+                    const [count, setCount] = React.useState(0)
+                    const [title, setTitle] = React.useState(0)
+                    const handleClick = () => {
+                    setCount(count + 1)
+                    setTitle(title + '[CLICK]')
+                    }
+                    // how do i get value into handleChange?
+                    // ...by passing the event in of course
+                    const handleChange = (event) => {
+                    setTitle(
+                        // event.target.value.split('').reverse().join('')
+                        event.target.value.split('').reverse()
+                        .map((char, index) => 
+                            index % 2 === 0 ? char.toUpperCase() : char.toLowerCase()
+                        )
+                        .join('')                    
+                    )
+                    // how do i dump the event to the console?
+                    // ...it's JavaScript!
+                    console.log(event);
+                    }
+                    return (
+                        <>
+                        <h1>The Ol' Click N' Type</h1>
+                        {count}<br />{title}&nbsp;
+                        <input type="text" value={title} onChange={handleChange} />                      
+                        <button onClick={handleClick}>
+                            {count}
+                        </button>
+                        </>
+                    )
+                }
+
 

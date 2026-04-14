@@ -3,10 +3,12 @@
 ## Work Log
 
 ```
+MON APR 14
+    https://fireship.dev/c/react/usestate
+    
 MON APR 6 
     25% Complete 
-        revisiting "preserving values with viewState" so that I can 
-        get the implementation details to stick 
+        revisiting "preserving values with viewState" so that I can get the implementation details to stick 
     notes
         preserving_values_with_usestate.txt
 ```
