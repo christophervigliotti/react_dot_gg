@@ -6,13 +6,20 @@
 
 ```
 APRIL
-MON 14
-    6p
-        continuing with challenges 
-        https://github.com/christophervigliotti/react_dot_gg/tree/main/notes/challenges
+WED 15
+    am
+        Challenge: Smart Character Limit
+            continue notes/challenges/smart-character-limit.txt
+TUE 14 (or is it Monday?)
+    7p
+        Challenge: Smart Character Limit
+            found at: https://fireship.dev/c/react/smart-character-limit
+            status: wip
+            notes: notes/challenges/smart-character-limit.txt
     430p
-        section: https://fireship.dev/c/react/usestate
-        notes: https://github.com/christophervigliotti/react_dot_gg/blob/main/notes/topics/preserving_values_with_usestate.txt
+        Lesson: Using UseState
+        found at: https://fireship.dev/c/react/usestate
+        notes: notes/topics/preserving_values_with_usestate.txt (lesson notes, quiz notes)
 MON 6 
     25% Complete 
         revisiting "preserving values with viewState" so that I can get the implementation details to stick 

@@ -4,10 +4,8 @@ In This Doc
     Challenges
     Quiz
     Lesson
-
 Challenges
-    first one at https://fireship.dev/c/react/light-switch-challenge
-
+    see /notes/challenges/using-usestate/ for challenge files
 Quiz
     What are hooks in react?
         x unconditional declarations about your component's needs

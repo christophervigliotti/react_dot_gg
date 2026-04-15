@@ -1,0 +1,28 @@
+/*
+https://fireship.dev/c/react/smart-character-limit
+  Requirements
+    DONE LimitedTextInput renders an input and submit button
+    WIP Update the remaining characters count when the user types
+    NOT_STARTED Add an error class to the "Characters remaining:" span element when the user exceeds the character limit and a no-error when they haven't
+    NOT_STARTED alert "The input exceeds the character limit. Please shorten your text." when the user submits a form with too many characters
+    NOT_STARTED alert "Thanks for your submission" when the user submits a form with an acceptable number of characters
+    NOT_STARTED Reset the input back to an empty string when the form is successfully submitted
+
+  NOTES
+    before diving in wanted to create a few working examples of useState from memory
+      example 1
+        import * as React from "react"
+        export default function Counter() {
+          // a: the useState declaration
+          const [theValueOfTheThing, setTheThing] = React.useState(0)
+          // b: does the thing   
+          const handleWhenTheThingIsClicked = () => setTheThing(theValueOfTheThing + 1)
+          // c: the thing
+          return (
+              <button onClick={handleWhenTheThingIsClicked}>
+                  {theValueOfTheThing}
+              </button>
+          )
+      example 2
+}
+*/
