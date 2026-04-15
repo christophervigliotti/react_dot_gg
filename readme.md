@@ -12,6 +12,9 @@ APRIL 🌧️
                 found at notes/reference/useState.js
             wip
                 continuing yesterday's challenge
+                6p 5 of 6 requirements met
+                next step
+                    requirement 6
 
     TUE 14 (or is it Monday?)
         a

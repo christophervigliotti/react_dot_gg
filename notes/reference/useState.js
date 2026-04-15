@@ -16,6 +16,11 @@ export default function ClickCounter() { // must be capitalized
   )
 }
 
+
+// example 2...storing a value
+
+
+
 // this time with two useState calls, each owning its own value
 import * as React from "react"
 export default function ClickOrTypeCounter() { // must be capitalized
@@ -69,6 +74,29 @@ export default function ClickOrTypeCounter() { // must be capitalized
       <button onClick={handleClick}> {/* pass ref, not a call */}
         {text ? text : `Clicked ${count} times`} {/* shows text while typing, count while clicking */}
       </button>
+    </>
+  )
+}
+
+// third example...get the number of characters remaining (max 20) from an input field, updates as it changes, displays count in a span
+import * as React from "react"
+export default function CharacterLimitInput() { // must be capitalized
+  const LIMIT = 20 // max characters allowed
+
+  const [ // useState — owns the typed text
+    text, // (1) the value
+    setText // (2) the setter
+  ] = React.useState("") // initial value
+
+  const handleChange = // fires on every keystroke
+    (event) => setText(event.target.value) // update text with whatever is typed
+
+  const remaining = LIMIT - text.length // recomputed on every re-render — no extra state needed
+
+  return (
+    <>
+      <span>{remaining} characters remaining</span> {/* re-renders whenever text changes */}
+      <input onChange={handleChange} type="text" maxLength={LIMIT} /> {/* maxLength enforces the cap in the DOM */}
     </>
   )
 }
