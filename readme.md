@@ -5,24 +5,24 @@
 ### Current Month
 
 ```
-APRIL
-TUE 14 (or is it Monday?)
-    7p
-        Challenge: Smart Character Limit
-            found at: https://fireship.dev/c/react/smart-character-limit
-            status: wip
-            notes: notes/challenges/smart-character-limit.txt
-            summary: started coding a few useState examples from memory to practice syntax recall
-            next step: finish useState examples (3 total) and then complete the challenge
-    430p
-        Lesson: Using UseState
-        found at: https://fireship.dev/c/react/usestate
-        notes: notes/topics/preserving_values_with_usestate.txt (lesson notes, quiz notes)
-MON 6 
-    25% Complete 
-        revisiting "preserving values with viewState" so that I can get the implementation details to stick 
-    notes
-        preserving_values_with_usestate.txt
+APRIL 🌧️
+    TUE 14 (or is it Monday?)
+        7p
+            Challenge: Smart Character Limit
+                found at: https://fireship.dev/c/react/smart-character-limit
+                status: wip
+                notes: notes/challenges/smart-character-limit.txt
+                summary: started coding a few useState examples from memory to practice syntax recall
+                next step: finish useState examples (3 total) and then complete the challenge
+        430p
+            Lesson: Using UseState ✅
+            found at: https://fireship.dev/c/react/usestate
+            notes: notes/topics/preserving_values_with_usestate.txt (lesson notes, quiz notes)
+    MON 6 
+        25% Complete 
+            revisiting "preserving values with viewState" so that I can get the implementation details to stick 
+        notes
+            preserving_values_with_usestate.txt
 ```
 
 ### Previous Months
