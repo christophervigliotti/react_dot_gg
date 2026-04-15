@@ -6,15 +6,22 @@
 
 ```
 APRIL 🌧️
+    WED 15 
+        notes
+            created a few examples of useState with good comments
+                found at notes/reference/useState.js
+            wip
+                continuing yesterday's challenge
+
     TUE 14 (or is it Monday?)
-        7p
+        a
             Challenge: Smart Character Limit
                 found at: https://fireship.dev/c/react/smart-character-limit
                 status: wip
                 notes: notes/challenges/smart-character-limit.txt
                 summary: started coding a few useState examples from memory to practice syntax recall
                 next step: finish useState examples (3 total) and then complete the challenge
-        430p
+        b
             Lesson: Using UseState ✅
             found at: https://fireship.dev/c/react/usestate
             notes: notes/topics/preserving_values_with_usestate.txt (lesson notes, quiz notes)
