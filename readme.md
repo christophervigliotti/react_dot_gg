@@ -6,7 +6,7 @@
 
 ```
 APRIL 🌧️
-    WED 15 
+    WED 15 (for sure it's Wednesday)
         notes
             created a few examples of useState with good comments
                 found at notes/reference/useState.js
@@ -64,3 +64,5 @@ folders
 * Spread Operator https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax 
 
 ![Snorlax is in the zone](snorlax.webp)
+
+# Who Is Dee Kade?
