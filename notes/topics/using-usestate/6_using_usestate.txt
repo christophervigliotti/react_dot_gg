@@ -1,9 +1,0 @@
-
-
-When lifting state up, you decouple where the state lives from the event handlers that update that state. To solve this...
-
-...create an updater function in the parent component where the state lives, and, via props, invoke that function from the child component(s) where the event handler(s) live
-
-
-
-

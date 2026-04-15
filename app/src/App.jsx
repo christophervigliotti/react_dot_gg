@@ -1,37 +1,27 @@
-// goal: a super-concise set of notes for useState
 import * as React from "react"
-export default function Counter() {
-  // a: the useState declaration
-  const [theValueOfTheThing, setTheThing] = React.useState(0)
-  // b: does the thing   
-  const handleWhenTheThingIsClicked = () => setTheThing(theValueOfTheThing + 1)
-  // c: the thing
+export default function ClickOrTypeCounter() { // must be capitalized
+  const [ // first useState — owns the click count
+    count, // (1) the value
+    setCount // (2) the setter
+  ] = React.useState(0) // initial value
+
+  const [ // second useState — owns the typed text
+    text, // (1) the value
+    setText // (2) the setter
+  ] = React.useState("") // initial value
+
+  const handleClick = // fires on button click
+    () => { setCount(count + 1); setText("") } // increment count, clear text so count shows again
+
+  const handleChange = // fires on every keystroke
+    (event) => setText(event.target.value) // event.target.value = what's typed
+
   return (
-      <button onClick={handleWhenTheThingIsClicked}>
-          {theValueOfTheThing}
+    <>
+      <input onChange={handleChange} type="text" /> {/* pass ref, not a call */}
+      <button onClick={handleClick}> {/* pass ref, not a call */}
+        {text ? text : `Clicked ${count} times`} {/* shows text while typing, count while clicking */}
       </button>
+    </>
   )
 }
-
-/*
-      const [theThing,doTheThing] = React.useState(0)
-        where 
-          theThing    wires var to {theThing}
-          doTheThing  fn called when state changes
-    b: 
-      const doTheThing = () => setTheThing('')
-        considerations
-          setTheThing...sets theThing (this is an implied setter)
-      or 
-        const doTheThing = (event) => { your_code_here }        
-          this is different than prior for 2 reasons
-            1. {} allows for multiple lines of code
-            2. event!  passing in the event [more notes here]
-    c:
-      return (
-          <button onClick={doTheThing}>
-              {theThing}
-          </button>
-      )
-
-  */
