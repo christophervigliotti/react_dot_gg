@@ -6,16 +6,14 @@
 
 ```
 APRIL
-WED 15
-    am
-        Challenge: Smart Character Limit
-            continue notes/challenges/smart-character-limit.txt
 TUE 14 (or is it Monday?)
     7p
         Challenge: Smart Character Limit
             found at: https://fireship.dev/c/react/smart-character-limit
             status: wip
             notes: notes/challenges/smart-character-limit.txt
+            summary: started coding a few useState examples from memory to practice syntax recall
+            next step: finish useState examples (3 total) and then complete the challenge
     430p
         Lesson: Using UseState
         found at: https://fireship.dev/c/react/usestate
