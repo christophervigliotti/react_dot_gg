@@ -1,11 +1,17 @@
 # Chris' React.gg Course Goodies
-
+## Progress
+26%
 ## Work Log
-
 ### Current Month
-
 ```
 APRIL 🌧️
+    TOMORROW FRI 17 - challenge 2: password-toggle
+
+    THU 16 - challenge 1 done
+        done
+            smart-character-limit
+        progress
+            26%!  don't break the streak!
     WED 15 (for sure it's Wednesday)
         notes
             created a few examples of useState with good comments
@@ -65,4 +71,7 @@ folders
 
 ![Snorlax is in the zone](snorlax.webp)
 
-# Who Is Dee Kade?
+# Mesages For Angie
+```
+Who Is Dee Kade?
+```
