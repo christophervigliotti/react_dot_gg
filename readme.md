@@ -5,24 +5,25 @@
 ### Current Month
 ```
 APRIL 🌧️
-    TOMORROW FRI 17 - challenge 2: password-toggle
-
+    FRI 17 - challenge 2: password-toggle
+        first of 6 requirements met
+        taking notes explaining each piece of code and how they are connected
     THU 16 - challenge 1 done
         done
             smart-character-limit
         progress
             26%!  don't break the streak!
-    WED 15 (for sure it's Wednesday)
+    WED 15 challenge 1: smart-character-limit
         notes
             created a few examples of useState with good comments
                 found at notes/reference/useState.js
             wip
                 continuing yesterday's challenge
-                6p 5 of 6 requirements met
+                5 of 6 requirements met
                 next step
                     requirement 6
 
-    TUE 14 (or is it Monday?)
+    TUE 14 challenge 1: smart-character-limit
         a
             Challenge: Smart Character Limit
                 found at: https://fireship.dev/c/react/smart-character-limit
@@ -34,7 +35,7 @@ APRIL 🌧️
             Lesson: Using UseState ✅
             found at: https://fireship.dev/c/react/usestate
             notes: notes/topics/preserving_values_with_usestate.txt (lesson notes, quiz notes)
-    MON 6 
+    MON 6 lesson: preserving values with viewState
         25% Complete 
             revisiting "preserving values with viewState" so that I can get the implementation details to stick 
         notes
