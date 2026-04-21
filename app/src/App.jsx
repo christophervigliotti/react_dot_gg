@@ -1,9 +1,9 @@
 import React from "react";
 
 function PasswordInput({ minimum = 8 }) {
-
+  // console.log("Hi I'm PasswordInput and I've been re-rendered");
   /*
-  1 Update the password length count when the input changes
+  DONE 1 Update the password length count when the input changes
     A 
       const [inputValue, setInputValue] = React.useState('');
         I am useState. 
@@ -19,29 +19,36 @@ function PasswordInput({ minimum = 8 }) {
         I am inputValue.  
     D 
       onChange={handleChange}  
-  2 Update the text style based on the password length threshold
-    A thresholdMet, aboolean to track 'has the threshold been met'
-    B sets thresholdMet
+  DONE 2 Update the text style based on the password length threshold
+    2.A INCORRECT & 2.B INCORRECT...
+      A thresholdMet, a boolean to track 'has the threshold been met'
+      B sets thresholdMet
+      ...this doesn't work because React re-renders the PasswordInput component
+    A says 'when setThresholdMet is called, set the state var thresholdMet'
+      and also says 'the initial value of thresholdMet is false'
+    B sets thresholdMet to the comparator operation.  minimum is set as a fn argument
     C the conditional code that sets the className based on the value of thresholdMet
-  3. Allow users to toggle the password visibility
-    NOT_STARTED
-  4. Show an alert with a success message when the password length is equal to or above the threshold on form submission
-    NOT_STARTED
-  5. Show an alert with an error message when the password length is below the threshold on form submission
+  DONE 3. Allow users to toggle the password visibility
+  DONE 4. Show an alert with a success message when the password length is equal to or above the threshold on form submission
+  DONE 5. Show an alert with an error message when the password length is below the threshold on form submission
     NOT_STARTED
   */
   const [inputValue, setInputValue] = React.useState('');             // 1.A  
-  const isInputValueVisible = true;
-  let thresholdMet = false;                                           // 2.A  
+  const [isInputValueVisible,setPasswordIsVisible] = React.useState(false);// 3
+  // let thresholdMet = false;                                        // 2.A incorrect     
+  const [thresholdMet, setThresholdMet] = React.useState(false);      // 2.A
   const handleChange = (event) => {
     setInputValue(event.target.value);                                // 1.B
-    thresholdMet = event.target.value.length >= minimum;              // 2.B 
-  };
+    // thresholdMet = event.target.value.length >= minimum;           // 2.B incorrect
+    setThresholdMet(event.target.value.length >= minimum);            // 2.B 
+    console.log('handleChange',event.target.value.length,minimum,thresholdMet);
+  };  
   const handleToggleVisibility = (event) => {                         // 3.
-
+    setPasswordIsVisible(!isInputValueVisible);
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => {    
     e.preventDefault();
+    console.log('handleSubmit',thresholdMet);
     if (thresholdMet) {
       alert("Password submitted");
     } else {
@@ -52,7 +59,7 @@ function PasswordInput({ minimum = 8 }) {
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="limited-text-input">Password:</label>     
-        <span className={thresholdMet ? "no-error" : "error"}>        /* 2.C  */
+        <span className={thresholdMet ? "no-error" : "error"}>       {/* 2.C */}
           {inputValue.length}
         </span>
       </div>
