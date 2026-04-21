@@ -1,85 +1,157 @@
-import React from "react";
+import * as React from "react";
 
-function PasswordInput({ minimum = 8 }) {
-  // console.log("Hi I'm PasswordInput and I've been re-rendered");
-  /*
-  DONE 1 Update the password length count when the input changes
-    A 
-      const [inputValue, setInputValue] = React.useState('');
-        I am useState. 
-        useState EXPLAIN_HERE
-        I connect the {prop} below (C) to the method in the handler (B) and am called when (D)
-    B 
-      setInputValue(event.target.value);         
-        I am a setter method
-        I set inputValue based on the value of event.target.value 
-        I am wired to inputValue by way of the useState definition (and implied bc convention inputValue setInputValue?...validate ths by changing one so that the names dont match and observe the results)
-    C 
-      value={inputValue}
-        I am inputValue.  
-    D 
-      onChange={handleChange}  
-  DONE 2 Update the text style based on the password length threshold
-    2.A INCORRECT & 2.B INCORRECT...
-      A thresholdMet, a boolean to track 'has the threshold been met'
-      B sets thresholdMet
-      ...this doesn't work because React re-renders the PasswordInput component
-    A says 'when setThresholdMet is called, set the state var thresholdMet'
-      and also says 'the initial value of thresholdMet is false'
-    B sets thresholdMet to the comparator operation.  minimum is set as a fn argument
-    C the conditional code that sets the className based on the value of thresholdMet
-  DONE 3. Allow users to toggle the password visibility
-  DONE 4. Show an alert with a success message when the password length is equal to or above the threshold on form submission
-  DONE 5. Show an alert with an error message when the password length is below the threshold on form submission
-    NOT_STARTED
-  */
-  const [inputValue, setInputValue] = React.useState('');             // 1.A  
-  const [isInputValueVisible,setPasswordIsVisible] = React.useState(false);// 3
-  // let thresholdMet = false;                                        // 2.A incorrect     
-  const [thresholdMet, setThresholdMet] = React.useState(false);      // 2.A
-  const handleChange = (event) => {
-    setInputValue(event.target.value);                                // 1.B
-    // thresholdMet = event.target.value.length >= minimum;           // 2.B incorrect
-    setThresholdMet(event.target.value.length >= minimum);            // 2.B 
-    console.log('handleChange',event.target.value.length,minimum,thresholdMet);
-  };  
-  const handleToggleVisibility = (event) => {                         // 3.
-    setPasswordIsVisible(!isInputValueVisible);
+const initialFormData = {
+  name: "",
+  email: "",
+  address: "",
+  city: "",
+  zipcode: ""
+};
+
+export default function MultiStepForm() {
+  const currentStep = 1;
+  const formData = initialFormData;
+
+  const handleChange = () => {};
+
+  const handleNextStep = () => {};
+
+  const handlePrevStep = () => {};
+
+  const handleSubmit = () => {
+    alert("Thank you for your submission");
   };
-  const handleSubmit = (e) => {    
-    e.preventDefault();
-    console.log('handleSubmit',thresholdMet);
-    if (thresholdMet) {
-      alert("Password submitted");
-    } else {
-      alert("You need a longer password");
-    }
-  };
-  return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="limited-text-input">Password:</label>     
-        <span className={thresholdMet ? "no-error" : "error"}>       {/* 2.C */}
-          {inputValue.length}
-        </span>
-      </div>
-      <div>
-        <input
-          placeholder="Enter a password"
-          type={isInputValueVisible ? "text" : "password"}           /* 3. */
-          id="limited-text-input"
-          value={inputValue}                                         /* 1.C */
-          onChange={handleChange}                                    /* 1.D */
-        />
-        <button type="button" onClick={handleToggleVisibility}>      {/* 3. */}
-          {isInputValueVisible ? "🙊" : "🙈"}
+
+  if (currentStep === 1) {
+    return (
+      <form onSubmit={handleSubmit}>
+        <h2>Personal Information</h2>
+        <div>
+          <label>Step {currentStep} of 3</label>
+          <progress value={currentStep} max={3} />
+        </div>
+        <div>
+          <label htmlFor="name">Name</label>
+          <input
+            required
+            name="name"
+            id="name"
+            placeholder="Enter your name"
+            value={formData.name}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input
+            required
+            name="email"
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+        </div>
+        <button type="button" className="secondary" onClick={handleNextStep}>
+          Next
         </button>
-      </div>
-
-      <button type="submit" className="primary">
-        Submit
-      </button>
-    </form>
-  );
+      </form>
+    );
+  } else if (currentStep === 2) {
+    return (
+      <form onSubmit={handleSubmit}>
+        <h2>Address</h2>
+        <div>
+          <label>Step {currentStep} of 3</label>
+          <progress value={currentStep} max={3} />
+        </div>
+        <div>
+          <label htmlFor="address">Address</label>
+          <input
+            required
+            name="address"
+            id="address"
+            type="address"
+            placeholder="What is your address?"
+            value={formData.address}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="city">City</label>
+          <input
+            required
+            name="city"
+            id="city"
+            placeholder="What city do you live in?"
+            value={formData.city}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="zipcode">Zipcode</label>
+          <input
+            required
+            name="zipcode"
+            id="zipcode"
+            type="number"
+            placeholder="What is your zipcode?"
+            value={formData.zipcode}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <button className="secondary" type="button" onClick={handleNextStep}>
+            Next
+          </button>
+          <button type="button" className="link" onClick={handlePrevStep}>
+            Previous
+          </button>
+        </div>
+      </form>
+    );
+  } else if (currentStep === 3) {
+    return (
+      <form onSubmit={handleSubmit}>
+        <h2>Confirm your information:</h2>
+        <div>
+          <label>Step {currentStep} of 3</label>
+          <progress value={currentStep} max={3} />
+        </div>
+        <table>
+          <tbody>
+            {Object.keys(formData).map((key) => {
+              return (
+                <tr key={key}>
+                  <td>{key}</td>
+                  <td>{formData[key]}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        <div>
+          <button className="primary" type="submit">
+            Submit
+          </button>
+          <button type="button" className="link" onClick={handlePrevStep}>
+            Previous
+          </button>
+        </div>
+      </form>
+    );
+  } else {
+    return null;
+  }
 }
-export default PasswordInput;
+/*
+
+In this challenge you're given a multistep form for getting data from the user. With the JSX already in place, update the component's state and functions in order to allow the user to progress through the form, updating the state as necessary.
+
+Tasks
+  Allow the user to transition to the next step
+  Allow the user to return to the previous step
+  Update the formData as the user progresses through the form
+  When finished, submit the form and reset the component's state
+*/

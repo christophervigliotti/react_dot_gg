@@ -1,10 +1,17 @@
 # Chris' React.gg Course Goodies
 ## Progress
-26%
+27%
 ## Work Log
 ### Current Month
 ```
 APRIL 🌧️
+    TUE 21 - challenge 3: multistep-form 
+        -  
+    MON 20 - 26% > 27%
+        - challenge 2 
+            completed
+        - challenge 3: multistep-form 
+            work started
     FRI 17 - challenge 2: password-toggle
         first of 6 requirements met
         taking notes explaining each piece of code and how they are connected
@@ -74,6 +81,7 @@ folders
 
 # Mesages For Angie
 ```
+don't break the streak!
 Happy Friendship Friday. Auction Man has replied.
 Who Is Dee Kade?
 ```
