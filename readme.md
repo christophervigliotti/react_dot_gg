@@ -1,4 +1,4 @@
-# Chris' React.gg Course Goodies
+# Chris' React.gg Course Stuff
 ## Progress
 27%
 ## Work Log
