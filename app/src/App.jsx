@@ -9,17 +9,25 @@ const initialFormData = {
 };
 
 export default function MultiStepForm() {
-  const currentStep = 1;
-  const formData = initialFormData;
+  const [currentStep, setCurrentStep] = React.useState(1);
+  const [formData, setFormData] = React.useState(initialFormData);
 
-  const handleChange = () => {};
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  const handleNextStep = () => {};
+  const handleNextStep = () => {
+    setCurrentStep(currentStep + 1);
+  };
 
-  const handlePrevStep = () => {};
+  const handlePrevStep = () => {
+    setCurrentStep(currentStep - 1);
+  };
 
   const handleSubmit = () => {
     alert("Thank you for your submission");
+    setFormData(initialFormData);
+    setCurrentStep(1);
   };
 
   if (currentStep === 1) {
@@ -150,8 +158,22 @@ export default function MultiStepForm() {
 In this challenge you're given a multistep form for getting data from the user. With the JSX already in place, update the component's state and functions in order to allow the user to progress through the form, updating the state as necessary.
 
 Tasks
-  Allow the user to transition to the next step
-  Allow the user to return to the previous step
-  Update the formData as the user progresses through the form
-  When finished, submit the form and reset the component's state
+  DONE 1. Allow the user to transition to the next step
+    added
+      const [currentStep, handleNextStep] = React.useState(1);
+    and
+      const handleNextStep = () => {
+        setCurrentStep(currentStep + 1);
+      };
+  DONE? 2. Allow the user to return to the previous step
+    added
+      const handlePrevStep = () => {
+        setCurrentStep(currentStep - 1);
+      };
+    but
+      not I don't see a useState wired to it like with 1.  will circle back
+  3. Update the formData as the user progresses through the form
+    done!
+  4. When finished, submit the form and reset the component's state
+    done
 */

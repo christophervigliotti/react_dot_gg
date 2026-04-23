@@ -5,8 +5,17 @@
 ### Current Month
 ```
 APRIL 🌧️
+    WED 22 - Still 27%?! lol
+        - challenge 3 
+            completed
+        - going to sleep
+            busy day
+        - 2morrow's plan
+            - challenge 3 review
+                take notes explaining the parts
+            - challenge 4
     TUE 21 - challenge 3: multistep-form 
-        -  
+        - 50% done!
     MON 20 - 26% > 27%
         - challenge 2 
             completed
@@ -81,6 +90,7 @@ folders
 
 # Mesages For Angie
 ```
+6-7
 don't break the streak!
 Happy Friendship Friday. Auction Man has replied.
 Who Is Dee Kade?
