@@ -5,11 +5,13 @@
 ### Current Month
 ```
 APRIL 🌧️
-    THU 23
+    THU 23 - 
         - challenge 3 review
             take notes explaining the parts DONE            
-        - challenge 4
-            TODO
+        - challenge 4: form builder
+            setup, reqirements 1 & 2 completed
+        - whats next
+            requirements 3 & 4
     WED 22 - Still 27%?! lol
         - challenge 3 
             completed
