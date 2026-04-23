@@ -5,6 +5,11 @@
 ### Current Month
 ```
 APRIL 🌧️
+    THU 23
+        - challenge 3 review
+            take notes explaining the parts DONE
+        - challenge 4
+            
     WED 22 - Still 27%?! lol
         - challenge 3 
             completed
@@ -86,12 +91,17 @@ folders
 
 * Spread Operator https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax 
 
-![Snorlax is in the zone](snorlax.webp)
+### Also Cool
 
-# Mesages For Angie
+* https://www.theodinproject.com/paths/full-stack-javascript/courses/react
+* https://www.w3schools.com/react/react_exercises.asp 
+
+### Mesages For Angie
 ```
 6-7
 don't break the streak!
 Happy Friendship Friday. Auction Man has replied.
 Who Is Dee Kade?
 ```
+
+![Snorlax is in the zone](snorlax.webp)
