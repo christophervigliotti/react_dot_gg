@@ -7,9 +7,9 @@
 APRIL 🌧️
     THU 23
         - challenge 3 review
-            take notes explaining the parts DONE
+            take notes explaining the parts DONE            
         - challenge 4
-            
+            TODO
     WED 22 - Still 27%?! lol
         - challenge 3 
             completed
