@@ -1,19 +1,31 @@
 # Chris' React.gg Course Stuff
 ## Progress
-27%
+28%
 ## Work Log
 ### Current Month
 ```
 APRIL 🌧️
+
+    MON 27 - guess who's back...back again...
+        - challenge 4, reqs 3 and 4...
+            booya
+            done with the challenges!
+            moving on...
+        - section Why React Renders
+            * https://fireship.dev/c/react/renders   
+            * notes/sections/why-react-renders.txt
+            28%, revisit this section tomorrow
+            
     THU 23 - 
         - challenge 3 review
             take notes explaining the parts DONE            
-        - challenge 4: form builder
+        - challenge 4: notes/challenges/FormBuilder.jsx
             setup, reqirements 1 & 2 completed
         - whats next
             requirements 3 & 4
+
     WED 22 - Still 27%?! lol
-        - challenge 3 
+        - challenge 3: notes/challenges/MultistepForm.jsx
             completed
         - going to sleep
             busy day
@@ -21,22 +33,27 @@ APRIL 🌧️
             - challenge 3 review
                 take notes explaining the parts
             - challenge 4
+
     TUE 21 - challenge 3: multistep-form 
         - 50% done!
+
     MON 20 - 26% > 27%
         - challenge 2 
             completed
         - challenge 3: multistep-form 
             work started
-    FRI 17 - challenge 2: password-toggle
+
+    FRI 17 - challenge 2: notes/chalenges/PasswordToggle.jsx
         first of 6 requirements met
         taking notes explaining each piece of code and how they are connected
+
     THU 16 - challenge 1 done
         done
             smart-character-limit
         progress
             26%!  don't break the streak!
-    WED 15 challenge 1: smart-character-limit
+
+    WED 15 challenge 1: SmartCharacterLimit.jsx
         notes
             created a few examples of useState with good comments
                 found at notes/reference/useState.js
@@ -58,6 +75,7 @@ APRIL 🌧️
             Lesson: Using UseState ✅
             found at: https://fireship.dev/c/react/usestate
             notes: notes/topics/preserving_values_with_usestate.txt (lesson notes, quiz notes)
+
     MON 6 lesson: preserving values with viewState
         25% Complete 
             revisiting "preserving values with viewState" so that I can get the implementation details to stick 
@@ -100,6 +118,7 @@ folders
 
 ### Mesages For Angie
 ```
+turning off phone
 6-7
 don't break the streak!
 Happy Friendship Friday. Auction Man has replied.

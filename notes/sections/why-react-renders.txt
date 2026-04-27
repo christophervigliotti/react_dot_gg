@@ -1,0 +1,29 @@
+Why React Renders
+
+    video (first pass)
+        view = function(state)
+            when and how is f invoked 
+            when and how does react update the view
+        what is rendering
+            calls your component with the intent of eventualy rendering the view
+            when react renders a compone two things happen
+                first
+                    react creates a snapshot of your component
+                        this snapshot contains everything that react needs to update that component at that particular moment in time
+                            props, state, event handlers and desc of UI are all captured here
+                    from there react takes that description of the ui and use it to update the view
+            ...
+            root / initial render stuff
+        when does react re-render
+            only when the state of the component changes
+        how does react know when the state of a component has changed
+            explain here
+
+    video again
+
+    reading + taking notes
+         
+        
+
+
+                             
