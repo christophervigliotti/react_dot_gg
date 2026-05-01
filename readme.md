@@ -5,7 +5,9 @@
 ### Current Month
 ```
 APRIL 🌧️
-
+    THU 30 - longest...video...ever...
+        don't wanna rush it.  i'm 90% done but will rewatch after i'm done taking notes on the last bit
+        resume at "Notice that Wave re-renders whenever w"
     MON 27 - guess who's back...back again...
         - challenge 4, reqs 3 and 4...
             booya
@@ -118,6 +120,7 @@ folders
 
 ### Mesages For Angie
 ```
+corndog misses u so much meow
 turning off phone
 6-7
 don't break the streak!
