@@ -144,8 +144,11 @@ folders
 * https://www.w3schools.com/react/react_exercises.asp 
 
 ### Mesages For Angie
-```
 
+<details>
+<summary>Click to toggle expand/collapse</summary>
+```
+another fun weekend
 corndog misses u so much meow
 turning off phone
 6-7
@@ -153,5 +156,5 @@ don't break the streak!
 Happy Friendship Friday. Auction Man has replied.
 Who Is Dee Kade?
 ```
-
 ![Snorlax is in the zone](snorlax.webp)
+</details>
