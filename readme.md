@@ -23,6 +23,7 @@ MAY 🌻
             initial pass at all 3 requirements
             it "works" but it's wonky
             will debug/get it up to par on next visit
+        28% > 31%
     FRI 1 
         - reviewed the video again because
 ```
