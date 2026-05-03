@@ -31,6 +31,7 @@ MAY 🌻
 
 <details>
 <summary>Click to toggle expand/collapse</summary>
+
 ```
 APRIL 🌧️
     THU 30 - longest...video...ever...
@@ -113,6 +114,7 @@ APRIL 🌧️
             preserving_values_with_usestate.txt
 
 ```
+
 </details>
 
 ## Notes
@@ -147,6 +149,7 @@ folders
 
 <details>
 <summary>Click to toggle expand/collapse</summary>
+
 ```
 another fun weekend
 corndog misses u so much meow
@@ -156,5 +159,6 @@ don't break the streak!
 Happy Friendship Friday. Auction Man has replied.
 Who Is Dee Kade?
 ```
+
 ![Snorlax is in the zone](snorlax.webp)
 </details>
