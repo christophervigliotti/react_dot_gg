@@ -1,8 +1,33 @@
 # Chris' React.gg Course Stuff
 ## Progress
-28%
+31% < so close to 1/3!
 ## Work Log
 ### Current Month
+```
+MAY 🌻
+    SUN 3 
+        - Section "Reality Check" https://fireship.dev/c/react/reality-check
+            section intro
+            'getting React to play nicely with the outside world'
+
+        - section "Managing Effects" https://fireship.dev/c/react/effects
+            A component has a side effect any time it does anything other than take some input, props and state, and calculate some output, a View.            
+
+            Rule #0 When a component renders, it should do so without running into any side effects
+
+            Rule #1 If a side effect is triggered by an event, put that side effect in an event handler
+
+            Rule #2 If a side effect is synchronizing your component with some outside system, put that side effect inside useEffect
+        - quiz 70%
+        - challenge "Search Filter" 
+            initial pass at all 3 requirements
+            it "works" but it's wonky
+            will debug/get it up to par on next visit
+    FRI 1 
+        - reviewed the video again because
+```
+
+### Previous Months
 ```
 APRIL 🌧️
     THU 30 - longest...video...ever...
@@ -83,11 +108,7 @@ APRIL 🌧️
             revisiting "preserving values with viewState" so that I can get the implementation details to stick 
         notes
             preserving_values_with_usestate.txt
-```
 
-### Previous Months
-```
-will go here
 ```
 
 ## Notes
@@ -120,6 +141,7 @@ folders
 
 ### Mesages For Angie
 ```
+
 corndog misses u so much meow
 turning off phone
 6-7

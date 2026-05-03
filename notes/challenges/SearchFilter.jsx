@@ -1,3 +1,15 @@
+/*
+In this challenge, you're given an app that uses useEffect as a way to react to changes in the search term. That's not ideal – useEffect should be used for synchronizing, not for reacting to changes in a value. Refactor the app to get rid of useEffect but keep the same functionality.
+
+Tasks
+Render the list of items
+Filter the list of items based on search term
+Don't use useEffect
+*/
+
+/*
+BEGINNING STATE OF CHALLENGE
+
 import * as React from "react";
 
 const items = [
@@ -22,23 +34,12 @@ export default function SearchFilter() {
   const [searchTerm, setSearchTerm] = React.useState("");
   const [filteredItems, setFilteredItems] = React.useState(items);
 
-  /*
   React.useEffect(() => {
     const result = items.filter((item) =>
       item.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredItems(result);
   }, [searchTerm]);
-  */
-
-  const handleChange = (event) => {
-    console.log(event.target.value);
-    setSearchTerm(event.target.value);
-    setFilteredItems(
-      items.filter((item) => 
-      item.toLowerCase().includes(searchTerm.toLowerCase()      
-    )));
-  };
 
   return (
     <div>
@@ -47,7 +48,7 @@ export default function SearchFilter() {
         type="text"
         placeholder="Search..."
         value={searchTerm}
-        onChange={handleChange}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
       <ul>
         {filteredItems.map((item) => (
@@ -57,11 +58,4 @@ export default function SearchFilter() {
     </div>
   );
 }
-
-/*
-In this challenge, you're given an app that uses useEffect as a way to react to changes in the search term. That's not ideal – useEffect should be used for synchronizing, not for reacting to changes in a value. Refactor the app to get rid of useEffect but keep the same functionality.
-  Tasks
-    Render the list of items
-    Filter the list of items based on search term
-    Don't use useEffect
 */

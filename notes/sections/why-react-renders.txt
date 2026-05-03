@@ -143,9 +143,9 @@ Why React Renders
         Now it's uncommon, but there is a way to tell React to use the value of the previous invocation of the updater function instead of replacing it. To do that, you pass the updater function a function itself that will take in the value from the most recent invocation as its argument.
 
             const handleClick = () => {
-            setCount(1)
-            setCount(2)
-            setCount((c) => c + 3)
+                setCount(1)
+                setCount(2)
+                setCount((c) => c + 3)
             }
 
             In this example, c will be 2 since that's what was passed to the most recent invocation of setCount before our callback function ran. Therefore, the final state will be 2 + 3, or 5.
@@ -153,10 +153,10 @@ Why React Renders
         What about this one?
 
             const handleClick = () => {
-            setCount(1)
-            setCount((c) => c + 3)
-            setCount(7)
-            setCount((c) => c + 10)
+                setCount(1)
+                setCount((c) => c + 3)
+                setCount(7)
+                setCount((c) => c + 10)
             }
             Let's walk through it.
 
@@ -167,10 +167,10 @@ Why React Renders
         Another way to think about our code above is like this.
 
             const handleClick = () => {
-            setCount((c) => 1)
-            setCount((c) => c + 3)
-            setCount((c) => 7)
-            setCount((c) => c + 10)
+                setCount((c) => 1)
+                setCount((c) => c + 3)
+                setCount((c) => 7)
+                setCount((c) => c + 10)
             }
             Where React just ignores the previous value unless you explicitly use it.
 
