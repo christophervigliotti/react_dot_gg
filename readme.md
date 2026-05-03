@@ -1,11 +1,13 @@
-# Chris' React.gg Course Stuff
+# Chris' React.gg Course Files
+
 ## Progress
 31% < so close to 1/3!
+
 ## Work Log
 ### Current Month
 ```
 MAY 🌻
-    SUN 3 
+    SUN 3 💻 🐛 🚀 🔧 👨‍💻 🐱 🖥️ ⚙️ 🐈 🧑‍💻 🐞 💡
         - Section "Reality Check" https://fireship.dev/c/react/reality-check
             section intro
             'getting React to play nicely with the outside world'
