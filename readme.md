@@ -28,6 +28,9 @@ MAY 🌻
 ```
 
 ### Previous Months
+
+<details>
+<summary>Click to toggle expand/collapse</summary>
 ```
 APRIL 🌧️
     THU 30 - longest...video...ever...
@@ -110,6 +113,7 @@ APRIL 🌧️
             preserving_values_with_usestate.txt
 
 ```
+</details>
 
 ## Notes
 section-specific notes at https://github.com/christophervigliotti/react_dot_gg/tree/main/notes
