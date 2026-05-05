@@ -36,7 +36,7 @@ export default function SearchFilter() {
     setSearchTerm(event.target.value);
     setFilteredItems(
       items.filter((item) => 
-      item.toLowerCase().includes(searchTerm.toLowerCase()      
+      item.toLowerCase().includes(event.target.value.toLowerCase()      
     )));
   };
 

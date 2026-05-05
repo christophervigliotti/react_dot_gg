@@ -1,31 +1,32 @@
 # Chris' React.gg Course Files
-
-## Progress
-31% < so close to 1/3!
-
 ## Work Log
 ### Current Month
 ```
 MAY 🌻
-    SUN 3 💻 🐛 🚀 🔧 👨‍💻 🐱 🖥️ ⚙️ 🐈 🧑‍💻 🐞 💡
+    MON 4 31% > 32% 🤬🗯️🔥💢👹👺📢🗣️🧨👺🌩️👿
+        - challenge "Search Filter" 
+            lots of distractions today, but I still managed to complete it.  oh yeah!
+            2morrow: https://fireship.dev/c/react/effects-part-2
+
+    SUN 3 28% > 31% 💻🐛🚀🔧👨‍💻🐱🖥️⚙️🐈🧑‍💻🐞💡
         - Section "Reality Check" https://fireship.dev/c/react/reality-check
             section intro
             'getting React to play nicely with the outside world'
-
         - section "Managing Effects" https://fireship.dev/c/react/effects
             A component has a side effect any time it does anything other than take some input, props and state, and calculate some output, a View.            
-
-            Rule #0 When a component renders, it should do so without running into any side effects
-
-            Rule #1 If a side effect is triggered by an event, put that side effect in an event handler
-
-            Rule #2 If a side effect is synchronizing your component with some outside system, put that side effect inside useEffect
+            Rule #0 
+                When a component renders, it should do so without running into any side effects
+            Rule #1 
+                If a side effect is triggered by an event, put that side effect in an event handler
+            Rule #2 
+                If a side effect is synchronizing your component with some outside system, put that side effect inside useEffect
         - quiz 70%
         - challenge "Search Filter" 
             initial pass at all 3 requirements
             it "works" but it's wonky
             will debug/get it up to par on next visit
-        28% > 31%
+        
+
     FRI 1 
         - reviewed the video again because
 ```
@@ -40,6 +41,7 @@ APRIL 🌧️
     THU 30 - longest...video...ever...
         don't wanna rush it.  i'm 90% done but will rewatch after i'm done taking notes on the last bit
         resume at "Notice that Wave re-renders whenever w"
+
     MON 27 - guess who's back...back again...
         - challenge 4, reqs 3 and 4...
             booya
@@ -117,7 +119,6 @@ APRIL 🌧️
             preserving_values_with_usestate.txt
 
 ```
-
 </details>
 
 ## Notes
