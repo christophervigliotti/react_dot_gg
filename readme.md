@@ -3,6 +3,11 @@
 ### Current Month
 ```
 MAY 🌻
+    TUE 5 31% > 32% 
+        - Section "Managing Effects Pt 2" https://fireship.dev/c/react/effects-part-2
+            notes: managing-effects-2.txt
+            first watch: done
+
     MON 4 31% > 32% 🤬🗯️🔥💢👹👺📢🗣️🧨👺🌩️👿
         - challenge "Search Filter" 
             lots of distractions today, but I still managed to complete it.  oh yeah!
@@ -154,6 +159,7 @@ folders
 <summary>Click to toggle expand/collapse</summary>
 
 ```
+TUE 5/5 sorry that u had a tough day at work
 MON 5/4 every day, bro
 SUN 5/3 another fun weekend
 OLDER...

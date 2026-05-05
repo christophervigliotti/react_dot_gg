@@ -1,0 +1,19 @@
+In the previous lesson, we established three rules for managing effects in React. They were...
+
+    Rule #0
+    When a component renders, it should do so without running into any side effects
+
+    Rule #1
+    If a side effect is triggered by an event, put that side effect in an event handler
+
+    Rule #2
+    If a side effect is synchronizing your component with some outside system, put that side effect inside useEffect
+
+    Now that you have some rules to guide you, let's stress test them a bit with some more advanced use cases.
+
+Up until this point, all of our examples have been side effects that are local to the user's device – getting their battery level, accessing local storage, changing the document's title. But when you think of side effects, especially as someone building for the web, the one that most likely comes to mind first is network requests.
+
+Without the ability to manage the complexity of asynchronous side effects like network requests, React would be mostly useless. Thankfully, we've already established a nice mental model for how we can do this.
+
+To demonstrate it, let's say we were building a carousel like experience whose content was different Pokémon from the PokéAPI.
+
