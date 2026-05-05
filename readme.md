@@ -25,7 +25,6 @@ MAY 🌻
             initial pass at all 3 requirements
             it "works" but it's wonky
             will debug/get it up to par on next visit
-        
 
     FRI 1 
         - reviewed the video again because
@@ -155,7 +154,9 @@ folders
 <summary>Click to toggle expand/collapse</summary>
 
 ```
-another fun weekend
+MON 5/4 every day, bro
+SUN 5/3 another fun weekend
+OLDER...
 corndog misses u so much meow
 turning off phone
 6-7
