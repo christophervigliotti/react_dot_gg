@@ -3,6 +3,11 @@
 ### Current Month
 ```
 MAY 🌻
+    SUN 10 
+        - Section "Managing Effects Pt 2" https://fireship.dev/c/react/effects-part-2
+            notes: managing-effects-2.txt
+            read-through + notes
+            
     TUE 5 31% > 32% 
         - Section "Managing Effects Pt 2" https://fireship.dev/c/react/effects-part-2
             notes: managing-effects-2.txt

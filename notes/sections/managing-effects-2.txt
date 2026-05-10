@@ -17,3 +17,105 @@ Without the ability to manage the complexity of asynchronous side effects like n
 
 To demonstrate it, let's say we were building a carousel like experience whose content was different Pokémon from the PokéAPI.
 
+Now before we jump into the code, I want you, knowing what you know now about how to handle side effects in React, to think through how you might implement this.
+
+We know based on 
+Rule #0
+ that we need to keep our network request out of React's rendering flow. Now we just need to decide where we put it, either in an event handler or in useEffect.
+
+Your first intuition is probably to put it in an event handler. Whenever the user interacts with our carousel, we'll make a network request to asynchronously fetch the next Pokémon. That seems perfectly reasonable – unfortunately, it's the wrong approach.
+
+This becomes obvious when we break it down further. What exactly does "whenever the user interacts with our carousel" actually mean? When they click a button? What about navigating with their keyboard? What if we wanted our carousel to change Pokemon automatically every few seconds? What about on the initial render when there's no user interaction but we still need to fetch the first Pokémon?
+
+The take away here is there's no single event that should trigger our network request. Instead, what we're really wanting to do is synchronize our component with the result of calling the Pokémon API – the perfect use case for useEffect.
+
+Before we worry the async bits, let's build out the basic logic for our carousel first. Again, the entire premise of this app is to synchronize our component with the result of calling the Pokémon API. To do that, we'll need some state. Specifically, we'll add an id state to keep track of the id of the Pokémon we're currently viewing and a pokemon state to keep track of the actual Pokémon data. Our id state will default to 1 since that's the id of the first Pokémon, Bulbasaur.
+
+import * as React from "react"
+
+export default function App () {
+  const [id, setId] = React.useState(1)
+  const [pokemon, setPokemon] = React.useState(null)
+
+  return (
+    <main>
+      {JSON.stringify({ id, pokemon }, null, 2)}
+    </main>
+  )
+}
+
+We'll then encapsulate the async logic for fetching a Pokémon into a function called fetchPokemon. Now, whenever we invoke fetchPokemon passing it an id of the Pokémon we want to fetch, we'll get back an object with an error if there was one or a response of the Pokémon data if there wasn't.
+
+App.jsx
+import * as React from "react"
+
+export default function App () {
+  const [id, setId] = React.useState(1)
+  const [pokemon, setPokemon] = React.useState(null)
+
+  return (
+    <main>
+      {JSON.stringify({ id, pokemon }, null, 2)}
+    </main>
+  )
+}
+
+api.js
+export async function fetchPokemon (id) {
+  try {
+    const res = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${id}`
+    )
+
+    if (res.ok === true) {
+      return {
+        error: null,
+        response: await res.json()
+      }
+    }
+
+    throw new Error(`Error fetching pokemon #${id}`)
+  } catch (e) {
+    return {
+      error: e,
+      response: null
+    }
+  }
+}
+
+Now the fun part. We want to synchronize our local pokemon state with the PokéAPI according to our local id state. That's a fancy way of saying whenever our local id state changes, we want to invoke fetchPokemon passing it the new id. We'll do that by calling fetchPokemon inside of useEffect and then updating our pokemon state with the result.
+
+App.jsx
+
+import * as React from "react"
+import { fetchPokemon } from "./api"
+
+export default function App () {
+  const [id, setId] = React.useState(2)
+  const [pokemon, setPokemon] = React.useState(null)
+
+  React.useEffect(() => {
+    const handleFetchPokemon = async () => {
+      const { error, response } = await fetchPokemon(id)
+      setPokemon(response)
+    }
+
+    handleFetchPokemon()
+  }, [id])
+
+  return (
+    <main>
+      {JSON.stringify({ id, pokemon }, null, 2)}
+    </main>
+  )
+}
+
+There are a few interesting things to point out with the code above.
+
+First, notice that our dependency array only includes one element, id. Again, this isn't telling React to re-run the effect when id changes (though, that's what happens). Instead, we're giving React an array of all of the dependencies our effect needs to re-synchronize with the outside system. As a byproduct of that, whenever React sees that id has changed between renders, it will re-run the effect.
+
+Second, you may be wondering why we declared a new handleFetchPokemon function inside of our event. This is purely aesthetic and was done so that we could use async/await inside of useEffect.
+
+Third, this is "tutorial" code. We're pretending like loading and error states don't exist. Unfortunately, you can't write tutorial code at work, so let's fix that.
+
+First, we'll need to add two new pieces of state to our component, loading and error. Because fetchPokemon is invoked as a result of rendering, including the initial render, we'll initialize loading to true (and error to null).

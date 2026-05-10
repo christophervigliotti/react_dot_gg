@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(sed -i '' 's|LOG_FILE_PATH_AND_FILE=\"\"/Users/Shared/logs/|LOG_FILE_PATH_AND_FILE=\"\"$LOG_FILES_PATH/|g' \"$f\")",
+      "Bash(done)",
+      "Bash(echo \"none\" echo \"\" echo \"=== Shell scripts still calling $LOG_COP \\(not $LOG_COP_PATH_AND_FILE\\) ===\")",
+      "Bash(grep -rn '\\\\$LOG_COP[^_]' /Users/Shared/scripts --include=\"*.sh\")",
+      "Bash(chromedriver --version)",
+      "Read(//usr/local/bin/**)",
+      "Bash(brew list:*)",
+      "Bash(gem list:*)",
+      "Bash(find /opt/scripts -name \"dynamic_env*\" -o -name \"*.sh\" 2>/dev/null | head -20)",
+      "Read(//opt/**)"
+    ]
+  }
+}

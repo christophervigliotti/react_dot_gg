@@ -1,67 +1,22 @@
-import * as React from "react";
+import * as React from "react"
+import { fetchPokemon } from "./api"
 
-const items = [
-  "Apple",
-  "Banana",
-  "Cherry",
-  "Date",
-  "Fig",
-  "Grape",
-  "Honeydew",
-  "Lemon",
-  "Mango",
-  "Nectarine",
-  "Orange",
-  "Papaya",
-  "Raspberry",
-  "Strawberry",
-  "Watermelon"
-];
+export default function App () {
+  const [id, setId] = React.useState(2)
+  const [pokemon, setPokemon] = React.useState(null)
 
-export default function SearchFilter() {
-  const [searchTerm, setSearchTerm] = React.useState("");
-  const [filteredItems, setFilteredItems] = React.useState(items);
-
-  /*
   React.useEffect(() => {
-    const result = items.filter((item) =>
-      item.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredItems(result);
-  }, [searchTerm]);
-  */
+    const handleFetchPokemon = async () => {
+      const { error, response } = await fetchPokemon(id)
+      setPokemon(response)
+    }
 
-  const handleChange = (event) => {
-    console.log(event.target.value);
-    setSearchTerm(event.target.value);
-    setFilteredItems(
-      items.filter((item) => 
-      item.toLowerCase().includes(event.target.value.toLowerCase()      
-    )));
-  };
+    handleFetchPokemon()
+  }, [id])
 
   return (
-    <div>
-      <h1>Search Filter</h1>
-      <input
-        type="text"
-        placeholder="Search..."
-        value={searchTerm}
-        onChange={handleChange}
-      />
-      <ul>
-        {filteredItems.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-    </div>
-  );
+    <main>
+      {JSON.stringify({ id, pokemon }, null, 2)}
+    </main>
+  )
 }
-
-/*
-In this challenge, you're given an app that uses useEffect as a way to react to changes in the search term. That's not ideal – useEffect should be used for synchronizing, not for reacting to changes in a value. Refactor the app to get rid of useEffect but keep the same functionality.
-  Tasks
-    Render the list of items
-    Filter the list of items based on search term
-    Don't use useEffect
-*/
