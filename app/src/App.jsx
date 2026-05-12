@@ -1,56 +1,26 @@
-import * as React from "react"
-import { fetchPokemon } from "./pokeapi"
-import PokeCarousel from "./PokeCarousel"
-import PokemonCard from "./PokemonCard"
+    import * as React from "react";
 
-export default function App () {
-  const [id, setId] = React.useState(1)
-  const [pokemon, setPokemon] = React.useState(null)
-  const [loading, setLoading] = React.useState(true)
-  const [error, setError] = React.useState(null)
+    export default function WindowDimensions() {
+      const [width, setWidth] = React.useState(0)
+      const [height, setHeight] = React.useState(0)
 
-  const handlePrevious = () => {
-    if (id > 1) {
-      setId(id - 1) 
+      React.useEffect(() => {
+        const handleResize = () => {
+          setWidth(window.innerWidth)
+          setHeight(window.innerHeight)
+        };
+
+        window.addEventListener("resize", handleResize)
+
+        return () => {
+          window.removeEventListener("resize", handleResize)
+        }
+
+      }, []);
+
+      return (
+        <p>
+          The current window dimensions are <strong>{width} by {height}</strong>.
+        </p>
+      );
     }
-  }
-
-  const handleNext = () => setId(id + 1)
-
-  React.useEffect(() => {
-    let ignore = false
-
-    const handleFetchPokemon = async () => {
-      setLoading(true)
-      setError(null)
-
-      const { error, response } = await fetchPokemon(id)
-
-      if (ignore) {
-        return
-      } else if (error) {
-        setError(error.message)
-      } else {
-        setPokemon(response)
-      }
-
-      setLoading(false)
-    }
-
-    handleFetchPokemon()
-
-    return () => {
-      ignore = true
-    }
-  }, [id])
-
-  return (
-    <PokeCarousel onPrevious={handlePrevious} onNext={handleNext}>
-      <PokemonCard 
-        loading={loading} 
-        error={error} 
-        data={pokemon} 
-      />
-    </PokeCarousel>
-  )
-}

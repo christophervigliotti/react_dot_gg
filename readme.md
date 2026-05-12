@@ -3,16 +3,20 @@
 ### Current Month
 ```
 MAY 🌻
-    WED 13 Managing Effects > Pt 2 > Quiz
-        https://fireship.dev/c/react/effects-part-2-quiz
-
-    TUE 12 useEffect
-        more PokeAPI
-        re-watch video
-        starting side quest to help this sink in
+    WED 13 
+        Managing Effects > Pt 2 > Challenges
+            challenge 01
+    TUE 12 
+        useEffect
+            more PokeAPI
+            re-watch video
+        side quest to help this sink in
           https://medium.com/@eric_abell/mastering-the-basics-of-reacts-useeffect-a-beginner-s-guide-3173c399b9e1  
           files in /side_quests/useEffect
           this was concise and just perfect
+        Managing Effects > Pt 2 > Quiz
+            https://fireship.dev/c/react/effects-part-2-quiz
+            done
 
     SUN 10 useEffect
         - Section "Managing Effects Pt 2" https://fireship.dev/c/react/effects-part-2

@@ -122,3 +122,103 @@ First, we'll need to add two new pieces of state to our component, loading and e
 
   const [loading, setLoading] = React.useState(true)
   const [error, setError] = React.useState(null)
+
+  what order do these run?
+
+    import * as React from "react"
+
+    function Logger () {
+      const [count, setCount] = React.useState(0)
+
+      React.useEffect(() => {
+        console.log("effect")
+
+        window.setTimeout(() => {
+          console.log('timeout')
+          setCount((c) => c + 1)
+        }, 5000)
+      }, [ ])
+
+      console.log("rendering")
+
+      return (
+        <p>{count}</p>
+      )
+    }
+
+    answer 
+
+      import * as React from "react"
+
+      export default function Logger () {
+        const [count, setCount] = React.useState(0)
+
+        React.useEffect(() => {
+          console.log("effect") << this runs 2nd (twice)
+
+          window.setTimeout(() => {
+            console.log('timeout') << this runs 3rd (twice)
+            setCount((c) => c + 1)
+          }, 5000)
+        }, [ ])
+
+        console.log("rendering") << this runs 1st (twice)
+
+        return (
+          <p>{count}</p>
+        )
+      }
+
+  what's wrong with this code
+
+    import * as React from "react";
+
+    export default function WindowDimensions() {
+      const [width, setWidth] = React.useState(0)
+      const [height, setHeight] = React.useState(0)
+
+      React.useEffect(() => {
+        const handleResize = () => {
+          setWidth(window.innerWidth)
+          setHeight(window.innerHeight)
+        };
+
+        window.addEventListener("resize", handleResize)
+      }, []);
+
+      return (
+        <p>
+          The current window dimensions are <strong>{width} by {height}</strong>.
+        </p>
+      );
+    }
+
+    needs cleanup code...
+
+      import * as React from "react";
+
+      export default function WindowDimensions() {
+        const [width, setWidth] = React.useState(0)
+        const [height, setHeight] = React.useState(0)
+
+        React.useEffect(() => {
+          const handleResize = () => {
+            setWidth(window.innerWidth)
+            setHeight(window.innerHeight)
+          };
+
+          window.addEventListener("resize", handleResize)
+
+          // cleanup added here
+          return () => {
+            window.removeEventListener("resize", handleResize)
+          }
+
+        }, []);
+
+        return (
+          <p>
+            The current window dimensions are <strong>{width} by {height}</strong>.
+          </p>
+        );
+      }
