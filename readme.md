@@ -3,18 +3,19 @@
 ### Current Month
 ```
 MAY 🌻
-    TUE 12
+    TUE 12 useEffect
         more PokeAPI
         re-watch video
         starting side quest to help this sink in
           https://medium.com/@eric_abell/mastering-the-basics-of-reacts-useeffect-a-beginner-s-guide-3173c399b9e1  
-    SUN 10 
+
+    SUN 10 useEffect
         - Section "Managing Effects Pt 2" https://fireship.dev/c/react/effects-part-2
             read-through + notes
             running code examples
             PokeAPI!
 
-    TUE 5 31% > 32% 
+    TUE 5 useEffect
         - Section "Managing Effects Pt 2" https://fireship.dev/c/react/effects-part-2
             notes: managing-effects-2.txt
             first watch: done
