@@ -119,3 +119,6 @@ Second, you may be wondering why we declared a new handleFetchPokemon function i
 Third, this is "tutorial" code. We're pretending like loading and error states don't exist. Unfortunately, you can't write tutorial code at work, so let's fix that.
 
 First, we'll need to add two new pieces of state to our component, loading and error. Because fetchPokemon is invoked as a result of rendering, including the initial render, we'll initialize loading to true (and error to null).
+
+  const [loading, setLoading] = React.useState(true)
+  const [error, setError] = React.useState(null)
