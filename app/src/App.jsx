@@ -12,6 +12,7 @@
 
         window.addEventListener("resize", handleResize)
 
+        // cleanup added here
         return () => {
           window.removeEventListener("resize", handleResize)
         }
