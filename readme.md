@@ -3,6 +3,15 @@
 ### Current Month
 ```
 MAY 🌻
+    WED 21
+        establishing a 730a-830a weekday cadence
+    TUE 20
+        I'm back.  Lesson learned: Study first thing before my brain is cooked from a whole day of solving stressful production outages.  This is my main priority.  No time for drama cause we are the champions...bum bum!  OF THE WORLD!!!
+        Managing Effects > Pt 2 > Challenges
+            challenge 01 for real
+                aced it
+            challenge 02
+
     WED 13 
         Managing Effects > Pt 2 > Challenges
             challenge 01
@@ -180,6 +189,7 @@ folders
 <summary>Click to toggle expand/collapse</summary>
 
 ```
+WED 5/20 sorry that I had a tough day at work
 TUE 5/5 sorry that u had a tough day at work
 MON 5/4 every day, bro
 SUN 5/3 another fun weekend
