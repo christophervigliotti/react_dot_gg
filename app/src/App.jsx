@@ -11,26 +11,31 @@ Tasks
   2. Fetch new data based on the user's input
   3. Render an error message if fetch fails
 
-TODO: 
-  refer to the pokemon example to grok (again) how to get data from remote
 */
 
 // was: import * as React from "react";...is: 
 import React, { useState, useEffect } from 'react';
 
 export default function CountryInfo() {
-
-  // replace const countryCode = "AU"; with...
+  console.log('default function fires');
+  /* replaced all of this... 
+    const countryCode = "AU"; with...
+    const data = null;
+    const isLoading = true;
+    const error = null;
+      ...with this... */
   const [countryCode, setCountryCode] = React.useState('AU');
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  // do I need this?? const handleChange = (e) => {};
 
-  const data = null;
-  const isLoading = true;
-  const error = null;
-
-  const handleChange = (e) => {};
-
-  // added this bc I know that it's needed
   useEffect(() => {
+    console.log('useEffect is in the house');
+    const fetchData = acync () => {
+      setIsLoading(true);
+      setError(null);
+    }
   }, []); // empty array = run once on mount, never again      
 
   return (
