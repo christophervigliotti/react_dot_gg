@@ -3,6 +3,8 @@
 ### Current Month
 ```
 MAY 🌻
+    WED MAY 27
+        challenge 02 continues
     WED 21 AM / B4 WORK
         challenge 02
             coded a 'get from remote' example 
@@ -192,6 +194,7 @@ folders
 <summary>Click to toggle expand/collapse</summary>
 
 ```
+WED 5/27 so much going on!
 THU 5/21 hi
 WED 5/20 sorry that I had a tough day at work
 TUE 5/5 sorry that u had a tough day at work
