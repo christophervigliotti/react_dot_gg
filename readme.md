@@ -201,7 +201,7 @@ folders
 
 ```
 WED 5/27 when I asked Google Gemini to make me an "ASCII Garfield" this was it's response...
-.---.   .---.
+       .---.   .---.
       /     \ /     \
       \_o_o_/_\_o_o_/
      //  `   `   `  \\
