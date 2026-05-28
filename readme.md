@@ -4,7 +4,8 @@
 ```
 MAY 🌻
     WED MAY 27
-        challenge 02 continues
+        challenge 02 
+            work continues!
     WED 21 AM / B4 WORK
         challenge 02
             coded a 'get from remote' example 

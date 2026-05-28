@@ -10,7 +10,6 @@ Tasks
   1. Display a loading state when fetching data
   2. Fetch new data based on the user's input
   3. Render an error message if fetch fails
-
 */
 
 // was: import * as React from "react";...is: 
@@ -28,15 +27,27 @@ export default function CountryInfo() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  // do I need this?? const handleChange = (e) => {};
+
+  const handleChange = (e) => {
+    setCountryCode(e.target.value);
+  }
 
   useEffect(() => {
-    console.log('useEffect is in the house');
-    const fetchData = acync () => {
+    const fetchData = async () => {
       setIsLoading(true);
       setError(null);
+      try{
+        const res = await fetch(`https://restcountries.com/v2/alpha/${countryCode}`);
+        if(!res.ok) throw new Error('Fetch failed');
+        const json = await res.json();
+        setData(json);
+      }catch(e){
+        setError(e);
+      }
+      setIsLoading(false);
     }
-  }, []); // empty array = run once on mount, never again      
+    fetchData();
+  }, [countryCode]); // empty array = run once on mount, never again      
 
   return (
     <section>
