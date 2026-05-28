@@ -9,11 +9,13 @@ MAY 🌻
         challenge 03 
             https://fireship.dev/c/react/hacker-news-challenge
             loaded and read for 2morrow am
+
     WED 21 AM / B4 WORK
         challenge 02
             coded a 'get from remote' example 
             once I study and comment that I 
             will complete challenge 02
+
     TUE 20
         I'm back.  Lesson learned: Study first thing before my brain is cooked from a whole day of solving stressful production outages.  This is my main priority.  No time for drama cause we are the champions...bum bum!  OF THE WORLD!!!
         Managing Effects > Pt 2 > Challenges
@@ -198,7 +200,22 @@ folders
 <summary>Click to toggle expand/collapse</summary>
 
 ```
-WED 5/27 so much going on!
+WED 5/27 when I asked Google Gemini to make me an "ASCII Garfield" this was it's response...
+.---.   .---.
+      /     \ /     \
+      \_o_o_/_\_o_o_/
+     //  `   `   `  \\
+    //     /   \     \\
+   //     (  _  )     \\
+   \       `---'       /
+    \    `-.._..-'    /
+     `---.._____..---'
+        /         \
+       (  /     \  )
+       / |       | \
+      (  (_/\_/\_)  )
+    _ / \_       _/ \ _
+   ( \__/\)     (/\__/ )
 THU 5/21 hi
 WED 5/20 sorry that I had a tough day at work
 TUE 5/5 sorry that u had a tough day at work
