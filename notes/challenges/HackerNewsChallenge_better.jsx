@@ -5,7 +5,7 @@ const fetchData = async ({ query = "", page = 0, tag = "" }) => {
   return fetch(
     `https://hn.algolia.com/api/v1/search?query=${query}&tags=${encodeURIComponent(
       tag
-    )}&page=${page}`
+    )}&page=${page}&hitsPerPage=5`
   )
     .then((response) => response.json())
     .then((json) => ({
@@ -26,13 +26,14 @@ export default function HackerNewsSearch() {
 
   React.useEffect(() => {
     setLoading(true);
-    fetchData({query,tag,page}).then(({ results, pages, resultsPerPage }) => {
+    fetchData({query,tag,page,resultsPerPage}).then(({ results, pages, resultsPerPage }) => {
       setResults(results);
       setTotalPages(pages);
       setResultsPerPage(resultsPerPage);
       setLoading(false);
     });
-  },[query,tag,page]);
+    console.log(page);
+  },[query,tag,page,resultsPerPage]);
 
   const handleSearch = (e) => {
     console.log('handleSearch ' + e.target.value);
@@ -101,21 +102,21 @@ export default function HackerNewsSearch() {
             </button>
           </div>
         </header>
-        <ul>
+        <ol>
           {results.map(({ url, objectID, title }, index) => {
             const href =
               url || `https://news.ycombinator.com/item?id=${objectID}`;
 
             return (
-              <li key={objectID}>
-                <span>{index+1+(page*resultsPerPage)}.</span>
+              <li key={objectID} style={{ textAlign: 'left' }} value={index+1+(page*resultsPerPage)}>
+                {/* <span>{index+1+(page*resultsPerPage)}.</span> */}
                 <a href={href} target="_blank" rel="noreferrer">
                   {title}
                 </a>
               </li>
             );
           })}
-        </ul>
+        </ol>
       </section>
     </main>
   );

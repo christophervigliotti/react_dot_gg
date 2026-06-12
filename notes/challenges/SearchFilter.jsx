@@ -60,8 +60,7 @@ export default function SearchFilter() {
 }
 */
 
-/*
-FINISHED WORKING SOLUTION
+// FINISHED WORKING SOLUTION
 import * as React from "react";
 
 const items = [
