@@ -3,8 +3,33 @@
 ### Current Month
 ```
 JUNE 
+    (after side quest, resume at ..then continue with react.gg here >> https://fireship.dev/c/react/refs)
+
+    NEXT JUNE XX    
+        WIP side_quests__2026_06.md >> useeffect02
+            https://react.dev/learn/synchronizing-with-effects
+            CI=true npm create vite@latest useeffect02 -- --template react && cd useeffect02 && npm install && npm run dev
+
     FRI JUNE 19
-        challenge 03 arguing with UI, but now fixed
+        challenge 03 
+            arguing with UI, but now fixed.  
+        side_quests__2026_06.md
+            side quest curriculum >> files in [this_repo]/notes/side_quests/2026_06/
+                rather than continuing just yet I'm going to focus on revisiting/reinforcing what I learned            
+                    > react docs "synchronizing with effects"
+                    > build a github user search from scratch
+                    > frontend mentor   
+                        their free challenges (e.g. IP Address Tracker, REST Countries) give you a real UI where you have to decide: "does this fetch go in a click handler or in useEffect?" That decision point is exactly what your notes are drilling.
+                    > useState functional updates + stale closures
+                        Advent of Frontend or typeHero — both have short isolated puzzles. Search for "stale closure" or "functional update" problems. The failure mode you hit today (batched clicks not accumulating) is a classic one worth seeing a second time in a different context.
+            DONE side_quests/2026_06/useeffect01
+                https://react.dev/learn/synchronizing-with-effects
+                CI=true npm create vite@latest useeffect01 -- --template react && cd useeffect01 && npm install && npm run dev
+                see App.jsx in that folder for work and notes
+            WIP side_quests/2026_06/useeffect02
+                https://react.dev/learn/synchronizing-with-effects
+                CI=true npm create vite@latest useeffect02 -- --template react && cd useeffect02 && npm install && npm run dev
+
     FRI JUNE 12 
         challenge 03 
             https://fireship.dev/c/react/hacker-news-challenge
