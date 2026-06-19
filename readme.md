@@ -3,6 +3,8 @@
 ### Current Month
 ```
 JUNE 
+    FRI JUNE 19
+        challenge 03 arguing with UI, but now fixed
     FRI JUNE 12 
         challenge 03 
             https://fireship.dev/c/react/hacker-news-challenge
@@ -205,6 +207,7 @@ folders
 <summary>Click to toggle expand/collapse</summary>
 
 ```
+FRI 6/19 Frigibax Community Day is tomorrow!
 WED 5/27 when I asked Google Gemini to make me an "ASCII Garfield" this was it's response...
        .---.   .---.
       /     \ /     \
