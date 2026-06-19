@@ -110,7 +110,7 @@ export default function HackerNewsSearch() {
               <li key={objectID}>
                 <span>{index+1+(page*resultsPerPage)}.</span>
                 <a href={href} target="_blank" rel="noreferrer">
-                  {title}
+                  {index+1} {title} 
                 </a>
               </li>
             );
