@@ -1,0 +1,37 @@
+# UseEffect
+
+## Dependency Array "the crap at the end"
+
+The behaviors without the dependency array and with an empty [] dependency array are different:
+
+    useEffect(() => {
+    // This runs after every render
+    });
+
+    useEffect(() => {
+    // This runs only on mount (when the component appears)
+    }, []);
+
+    useEffect(() => {
+    // This runs on mount *and also* if either a or b have changed since the last render
+    }, [a, b]);
+
+
+
+
+    Don’t use refs to prevent Effects from firing 
+A common pitfall for preventing Effects firing twice in development is to use a ref to prevent the Effect from running more than once. For example, you could “fix” the above bug with a useRef:
+
+  const connectionRef = useRef(null);
+  useEffect(() => {
+    // 🚩 This wont fix the bug!!!
+    if (!connectionRef.current) {
+      connectionRef.current = createConnection();
+      connectionRef.current.connect();
+    }
+  }, []);
+This makes it so you only see "✅ Connecting..." once in development, but it doesn’t fix the bug.
+
+
+
+

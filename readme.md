@@ -5,10 +5,15 @@
 JUNE 
     (after side quest, resume at ..then continue with react.gg here >> https://fireship.dev/c/react/refs)
 
-    NEXT JUNE XX    
+    MON JUNE 29    
         WIP side_quests__2026_06.md >> useeffect02
             https://react.dev/learn/synchronizing-with-effects
             CI=true npm create vite@latest useeffect02 -- --template react && cd useeffect02 && npm install && npm run dev
+        
+            resume tomorrow at 
+                > https://react.dev/learn/synchronizing-with-effects
+                    > "Controlling non-React widgets"
+                    (working in useEffect02)
 
     FRI JUNE 19
         challenge 03 

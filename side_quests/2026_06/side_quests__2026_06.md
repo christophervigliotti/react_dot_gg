@@ -7,6 +7,9 @@ side_quests/2026_06
         WIP side_quests/2026_06/useeffect02
             https://react.dev/learn/synchronizing-with-effects
             CI=true npm create vite@latest useeffect02 -- --template react && cd useeffect02 && npm install && npm run dev
+            
+
+
     > build a github user search from scratch
     > frontend mentor   
         their free challenges (e.g. IP Address Tracker, REST Countries) give you a real UI where you have to decide: "does this fetch go in a click handler or in useEffect?" That decision point is exactly what your notes are drilling.
