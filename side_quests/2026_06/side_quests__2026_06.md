@@ -7,8 +7,8 @@ side_quests/2026_06
         WIP side_quests/2026_06/useeffect02
             https://react.dev/learn/synchronizing-with-effects
             CI=true npm create vite@latest useeffect02 -- --template react && cd useeffect02 && npm install && npm run dev
-            
 
+            
 
     > build a github user search from scratch
     > frontend mentor   

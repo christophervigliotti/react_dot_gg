@@ -2,7 +2,21 @@
 ## Work Log
 ### Current Month
 ```
-JUNE 
+JULY 🇺🇸
+    SAT JULY 3 - Challenges @ Synchronizing with Effects
+            https://react.dev/learn/synchronizing-with-effects
+        DONE Challenge 1
+        WIP Challenge 2
+            ported the challenge to an app so that I can tinker with it and see the results in-browser
+```
+
+### Previous Months
+
+<details>
+<summary>Click to toggle expand/collapse</summary>
+
+```
+JUNE 🐛
     (after side quest, resume at ..then continue with react.gg here >> https://fireship.dev/c/react/refs)
 
     MON JUNE 29    
@@ -10,7 +24,7 @@ JUNE
             https://react.dev/learn/synchronizing-with-effects
             CI=true npm create vite@latest useeffect02 -- --template react && cd useeffect02 && npm install && npm run dev
         
-            resume tomorrow at 
+            resume at 
                 > https://react.dev/learn/synchronizing-with-effects
                     > "Controlling non-React widgets"
                     (working in useEffect02)
@@ -39,14 +53,6 @@ JUNE
         challenge 03 
             https://fireship.dev/c/react/hacker-news-challenge
             DONE!
-```
-
-### Previous Months
-
-<details>
-<summary>Click to toggle expand/collapse</summary>
-
-```
 MAY 🌻    
     WED MAY 27
         challenge 02 

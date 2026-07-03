@@ -1,0 +1,1 @@
+CI=true npm create vite@latest syncWithFx02 -- --template react && cd 
