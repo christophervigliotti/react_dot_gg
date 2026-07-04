@@ -3,11 +3,15 @@
 ### Current Month
 ```
 JULY 🇺🇸
-    SAT JULY 3 - Challenges @ Synchronizing with Effects
-            https://react.dev/learn/synchronizing-with-effects
-        DONE Challenge 1
-        DONE @ 8p Challenge 2
-            ported the challenge to an app so that I can tinker with it and see the results in-browser
+    Challenges @ Synchronizing with Effects https://react.dev/learn/synchronizing-with-effects
+
+        SAT JULY 4 (🇺🇸 two fiddy 🇺🇸) - 
+            WIP Challenge 3
+                challenge ported over to project syncWithFx03
+        FRI JULY 3         
+            DONE Challenge 1
+            DONE @ 8p Challenge 2
+                ported the challenge to an app so that I can tinker with it and see the results in-browser
 ```
 
 ### Previous Months
