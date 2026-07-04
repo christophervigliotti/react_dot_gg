@@ -6,7 +6,7 @@ JULY 🇺🇸
     SAT JULY 3 - Challenges @ Synchronizing with Effects
             https://react.dev/learn/synchronizing-with-effects
         DONE Challenge 1
-        WIP Challenge 2
+        DONE @ 8p Challenge 2
             ported the challenge to an app so that I can tinker with it and see the results in-browser
 ```
 
