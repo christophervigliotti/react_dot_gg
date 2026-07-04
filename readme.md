@@ -9,7 +9,7 @@ JULY 🇺🇸
             WIP Challenge 3
                 challenge ported over to project syncWithFx03
                 MISC
-                    added webhook to post Git updates to muh Discord server!!!
+                    added webhook to post Git updates to muh Discord server!!! << obnoxious exclamation marks
         FRI JULY 3         
             DONE Challenge 1
             DONE @ 8p Challenge 2
