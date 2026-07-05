@@ -3,12 +3,25 @@
 ### Current Month
 ```
 JULY 🇺🇸
-    Challenges @ Synchronizing with Effects https://react.dev/learn/synchronizing-with-effects
-
         SUN JULY 5
             DONE Challenge 3
             DONE re-organizing notes by concept (best for referring back to, identifying areas to reinforce)
-            WIP Challenge 4
+            DONE! Challenge 4
+
+            those were so fun and the react.dev docs are superb.  I'm going to go through all of the ones before this to shore up the rest of my concepts knowledge.  I'm going to take it section by section...
+
+                WHATS_NEXT
+
+                    NOT_STARTED React.dev => Describing the UI https://react.dev/learn/describing-the-ui
+                    
+                    NOT_STARTED React.dev => Adding Interactivity https://react.dev/learn/adding-interactivity
+                    
+                    NOT_STARTED React.dev => Managing State https://react.dev/learn/managing-state
+                    
+                    NOT_STARTED React.dev => Escape Hatches https://react.dev/learn/escape-hatches 
+
+
+    DONE Challenges @ Synchronizing with Effects https://react.dev/learn/synchronizing-with-effects
 
         SAT JULY 4 (🇺🇸 two fiddy 🇺🇸) - 
             WIP Challenge 3

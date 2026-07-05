@@ -42,6 +42,25 @@ useEffect(() => {
 
 * The returned function is cleanup — React calls it before running the effect again, or when the component unmounts. Handy for unsubscribing, clearing timers, canceling requests, etc.  If your Effect fetches something, the cleanup function should either abort the fetch or ignore its result.
 
+  ```jsx
+  // Bug: no cleanup, so a slow request can resolve after a newer one
+  // and overwrite the UI with stale data
+  useEffect(() => {
+    fetchBio(person).then(result => setBio(result));
+  }, [person]);
+
+  // Fixed: cleanup flips a flag so a stale response is ignored
+  useEffect(() => {
+    let ignore = false;
+    fetchBio(person).then(result => {
+      if (!ignore) setBio(result);
+    });
+    return () => {
+      ignore = true;
+    };
+  }, [person]);
+  ```
+
 ### Mental Model
 
 Render describes what things look like right now; useEffect handles anything that needs to happen because of that render, outside of React's normal rendering process."

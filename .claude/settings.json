@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(timeout 20 bash -c 'until grep -q \"Local:\" /tmp/claude-503/vite-syncWithFx04.log 2>/dev/null; do sleep 0.5; done')",
+      "Bash(chromium-cli --session syncWithFx04)",
+      "Bash(curl -s http://localhost:5173/)"
+    ]
+  }
+}
