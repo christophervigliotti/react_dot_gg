@@ -5,6 +5,11 @@
 JULY 🇺🇸
     Challenges @ Synchronizing with Effects https://react.dev/learn/synchronizing-with-effects
 
+        SUN JULY 5
+            DONE Challenge 3
+            DONE re-organizing notes by concept (best for referring back to, identifying areas to reinforce)
+            WIP Challenge 4
+
         SAT JULY 4 (🇺🇸 two fiddy 🇺🇸) - 
             WIP Challenge 3
                 challenge ported over to project syncWithFx03
@@ -249,6 +254,13 @@ folders
 <summary>Click to toggle expand/collapse</summary>
 
 ```
+JULY 5 
+    Gizmo is a big fat fuzzy monster
+     /\_/\  
+    ( o.o ) 
+    ( =^= ) 
+   ('')_('') 
+   this kinda looks like a Snorlax tho
 FRI 6/19 Frigibax Community Day is tomorrow!
 WED 5/27 when I asked Google Gemini to make me an "ASCII Garfield" this was it's response...
        .---.   .---.

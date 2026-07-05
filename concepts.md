@@ -23,6 +23,23 @@ useEffect(() => {
 
 * The dependency array controls when it re-runs: [] means "only once, on mount," [someValue] means "re-run whenever someValue changes," and no array means "run after every render."
 
+  * CAVEAT!  if you are running the app in <StrictMode> (combined with development mode), this flow occurs: `mount → run effect → run cleanup → run effect again`.  So with [], the effect body still executes twice on initial mount in dev — React mounts the component, then simulates an unmount/remount immediately by calling your cleanup and re-running the effect. 
+
+    Fix: write the effect so the double-invoke is harmless — always tear down whatever the effect set up, in the cleanup function.
+
+    ```jsx
+    // Bug: no cleanup, so the double-invoke in dev leaves 2 intervals running
+    useEffect(() => {
+      setInterval(() => setCount(c => c + 1), 1000);
+    }, []);
+
+    // Fixed: cleanup clears the interval before the second mount creates a new one
+    useEffect(() => {
+      const intervalId = setInterval(() => setCount(c => c + 1), 1000);
+      return () => clearInterval(intervalId);
+    }, []);
+    ```
+
 * The returned function is cleanup — React calls it before running the effect again, or when the component unmounts. Handy for unsubscribing, clearing timers, canceling requests, etc.  If your Effect fetches something, the cleanup function should either abort the fetch or ignore its result.
 
 ### Mental Model

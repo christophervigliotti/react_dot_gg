@@ -1,0 +1,52 @@
+A component has a side effect any time it does anything other than take some input, props and state, and calculate some output, a View.            
+
+Rule #0 When a component renders, it should do so without running into any side effects
+
+    example
+
+Rule #1 If a side effect is triggered by an event, put that side effect in an event handler
+
+    example
+
+Rule #2 If a side effect is synchronizing your component with some outside system, put that side effect inside useEffect
+
+    use useEffect when you need to remove a side effect from React's rendering flow
+
+    useEffect runs after render
+
+        example
+
+What's Wrong With This Code?
+
+    render isn't pure, side effect should be moved into the event handler
+
+    import * as React from "react"
+
+    export default function App() {
+        const [theme, setTheme] = React.useState("light")
+
+        const handleClick = () => {
+            switch (theme) {
+            case "light":
+                setTheme("dark")
+                break
+            case "dark":
+                setTheme("solarized")
+                break
+            default :
+                setTheme("light")
+                break
+            }
+        }
+
+        localStorage.setItem("uidotdev_theme", theme) <<< THIS 
+
+        return (
+            <div>
+                <span>
+                    {theme}
+                </span>
+                <button onClick={handleClick}>Next Theme</button>
+            </div>
+        )
+    }

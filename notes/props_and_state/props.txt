@@ -1,0 +1,282 @@
+Props
+    Props are to components what arguments are to functions 
+
+    how to pass data into components
+        examples
+            passing in a string prop 
+                <Pokemon name="Snorlax" />
+
+            more examples
+                <Profile
+                    username="cheetomcfreeze"
+                    authed={true}
+                    logout={handleLogout}
+                    header={<h1>👋</h1>}
+                />                
+
+        things to know 
+            truthy truth!
+                <Game isfun />
+                is the same as 
+                <Game isFun={true} />
+
+            if u r passing in a prop that 
+            isn't a string, use the curlies 
+
+            you can pass in object literals like so 
+                <DatePicker settings={{
+                    format: "yy-mm-dd",
+                    animate: false,
+                    days: "abbreviate"
+                }} />            
+
+
+
+    how to acces props
+        with props.thepropertyname
+
+    examples 
+
+        function Hello (props) {
+            return <h1>Hello, {props.name}</h1>
+        }
+        export default function App () {
+            return <Hello name='Tyler' />
+        }
+
+        -
+
+        function Hello (props) {
+            return (
+                <h1>
+                Hello, {props.first} {props.last}
+                </h1>
+            )
+        }
+        export default function App () {
+            return <Hello first="Tyler" last="McGinnis" />
+        }
+
+        -
+        destructured props example 
+        function Hello ({ first, last }) {
+            return (
+                <h1>
+                Hello, {first} {last}
+                </h1>
+            )
+        }
+
+        -
+        <Header>You can have text between tags.</Header>
+        <Layout>
+            <h1>You can also have</h1>
+            <p>elements between tags</p>
+        </Layout>    
+        -
+    Whatever is between the opening and closing tag of an element will be accessible inside of the component via props.children.
+        function Header (props) {
+            return <h1 className="header">{props.children}</h1>
+        }
+        function Layout (props) {
+            return (
+                <div className="layout">
+                    <Sidebar />
+                    {props.children}
+                    <Footer />
+                </div>
+            )
+        }
+    You can think of a component with a children prop as having a placeholder that can be filled by its parent component.
+
+    Quiz
+    
+        What's wrong with this code 
+            <DatePicker
+                eventName={`${event} - ${date}`}
+                renderFooter={() => (
+                    <button onClick={handleClose}>
+                    Close
+                    </button>
+                )}
+                settings={
+                    format: "yy-mm-dd",
+                    animate: false,
+                    days: "abbreviate"
+                }
+            />
+            missing curlies at settings
+
+        What is 'children'?
+            const Layout = ({ children }) => {
+            return (
+                <div className="layout">
+                <Header />
+                {children}
+                <Footer />
+                </div>
+            )
+            }    
+            we don't know without inspecting the parent/caller
+
+        interesting that props.style just works
+            const USER_DATA = {
+                name: "Ben Adam",
+                img: "https://avatars.githubusercontent.com/u/6645985",
+                handle: "benadam11"
+            };
+
+            function Badge(props) {
+                return (
+                    <div style={props.style}>
+                    <img alt={props.user.name} src={props.user.img} />
+                    <div>
+                        <h4>{props.user.name}</h4>
+                        <p>@{props.user.handle}</p>
+                    </div>
+                    </div>
+                );
+            }
+            export default function App() {
+                return (
+                    <Badge
+                        user={USER_DATA}
+                        style={{
+                            width: 300,
+                            margin: "0 auto",
+                            border: "1px solid var(--beige-10)",
+                            borderRadius: 8,
+                            backgroundColor: "var(--charcoal)",
+                            padding: 24,
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            gap: "16px",
+                            textAlign: "center"
+                        }}
+                    />
+                );
+            }
+            function Avatar({src,alt}) {
+                return <img src={src} alt={alt} />;
+            }
+            function Name({name}) {
+                return <h4>{name}</h4>;
+            }
+            function Handle({handle}) {
+                return <p>@{handle}</p>;
+            }
+
+    function Badge(props) {
+    return (
+        <div style={props.style}>
+        <Avatar src={props.user.img} alt={props.user.name} />
+        <div>
+            <Name name={props.user.name} />
+            <Handle handle={props.user.handle} />
+            <button onClick={props.addFriend}>Add Friend</button>
+        </div>
+        </div>
+    );
+    }
+
+    export default function App() {
+    return (
+        <Badge
+        user={{
+            name: "Lynn Fisher",
+            img: "https://avatars.githubusercontent.com/u/871315",
+            handle: "lynnandtonic"
+        }}
+        style={{
+            width: 300,
+            margin: "0 auto",
+            border: "1px solid var(--beige-10)",
+            borderRadius: 8,
+            backgroundColor: "var(--charcoal)",
+            padding: 24,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "16px",
+            textAlign: "center"
+        }}
+        addFriend={() => alert("Added!")}
+        />
+    );
+    }
+
+
+Challenges 
+    Children Props 
+        Tasks
+            Give the image a proper alt tag using the author's name
+            Make sure the badge displays the profile image correctly
+            Display the author's name in the badge's heading
+            Display the author's handle below the heading
+            Display the bio text under the headings
+            Pass the click handler to the button so that it opens an alert when clicked
+
+        Before 
+            function Badge({ name, img, handle }) {
+                return (
+                    <div className="badge">
+                    <img alt={`Avatar for ${name}} src={img} />
+                    <header>
+                        <h4>{name}</h4>
+                        <h6>@{handle}</h6>
+                    </header>
+                    </div>
+                );
+            }
+
+            export default function App() {
+                const handleAddFriend = () => alert("Added");
+
+                return (
+                    <Badge
+                    name="Alex Brown"
+                    handle="alexbrown40"
+                    img="https://avatars.githubusercontent.com/u/67877015"
+                    >
+                    <p>
+                        Alex enjoys running, surfing, and binge watching the Twilight series.
+                    </p>
+                    <button onClick={handleAddFriend}>Add Friend</button>
+                    </Badge>
+                );
+            }
+        After
+
+            added 'children' to arguments 
+            added {children} to the return 
+            changed img alt={name}
+>>          function Badge({ name, img, handle, children }) {
+                return (
+                    <div className="badge">
+>>                  <img alt={name} src={img} />
+                    <header>
+                        <h4>{name}</h4>
+                        <h6>@{handle}</h6>
+                    </header>
+>>                  {children}
+                    </div>
+                );
+            }
+
+            export default function App() {
+            const handleAddFriend = () => alert("Added");
+
+                return (
+                    <Badge
+                    name="Alex Brown"
+                    handle="alexbrown40"
+                    img="https://avatars.githubusercontent.com/u/67877015"
+                    >
+                    <p>
+                        Alex enjoys running, surfing, and binge watching the Twilight series.
+                    </p>
+                    <button onClick={handleAddFriend}>Add Friend</button>
+                    </Badge>
+                );
+            }
